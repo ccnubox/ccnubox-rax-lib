@@ -1,6 +1,3 @@
-
-
-
 import {createElement, Component, render} from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
@@ -25,7 +22,7 @@ class App extends Component {
           style={styles.searchInput}
           placeholder= "输入关键字查找书籍"
           />
-        <Button style = {styles.searchButton} onPress={(evt) => { alert('你好'); }}>
+        <Button style = {styles.searchButton} onPress={(evt) => { window.location = '/result' }}>
         	
         		<View style = {styles.searchButtonContainner}>
             <Text style ={styles.searchButtonText}>搜索</Text>
@@ -40,8 +37,6 @@ class App extends Component {
 const styles={
 
   App:{
-    position:"absolute",
-    top:130,
     backgroundColor:"rgb(239,239,244)",
     width:750,
     height:1334,
@@ -52,10 +47,10 @@ const styles={
     top:462,
     left:100,
     width:540,
-    height:87,
-    color:"red",
+    height:100,
     backgroundColor:"rgb(255,255,255)",
-    fontSize:34
+    fontSize:34,
+    padding:20,
       
   },
   searchCenterPicture:{
@@ -64,6 +59,7 @@ const styles={
       left:200,
       width:350,
       height:240,
+     
   },
   searchButton:{
     position:"absolute",
