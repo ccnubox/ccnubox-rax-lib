@@ -6,7 +6,7 @@ import Image from 'rax-image';
 import TextInput from 'rax-textinput';
  const stylechange = 0.56;
 let image = {
-  uri:"https://wx1.sinaimg.cn/large/006P0MECly1fpi7tb7fanj309q06o0sq.jpg"
+  uri:"http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/search_picture.png"
 }
 class App extends Component {
   constructor(props){
