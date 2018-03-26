@@ -3,7 +3,7 @@ import {createElement, Component, render} from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
 import ListView from 'rax-listview';
-
+import Image from 'rax-image'
 let icon = {
   uri:"http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/book_icon.png"
 }
@@ -36,13 +36,7 @@ class ListViewDemo extends Component {
       data: listData
     };
   }
-  listHeader = () => {
-    return (
-      <View style={styles.title}>
-        <Text style={styles.text}>列表头部</Text>
-      </View>
-    );
-  }
+  
   listLoading = () => {
     if (this.state.index < 4) {
       return (
@@ -58,10 +52,11 @@ class ListViewDemo extends Component {
     
       return (
         <View style={styles.book_content_containner}>
-          <Image source = {icon} style = {styles.book_icon}/>
-          <Text style={styles.title}>{styles.book_title}</Text>
-          <Text style={styles.author}>{styles.book_author} 著</Text>
-          <Text style={styles.text}>{styles.book_press}</Text>
+        1
+           {/* <Image source = {icon} style = {styles.book_icon}/> */}
+          {/* <Text style={styles.book_title}>《朝花夕拾》</Text>
+          <View style={styles.book_author}>鲁肃 著  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 人民出版社 人民出版社人民出版社人民出版社</View> */}
+       
         </View>
       );
    
@@ -89,14 +84,12 @@ class ListViewDemo extends Component {
     return (
       <View style={styles.App}>
       <View style = {styles.awayTop}></View>
-      <ListView
-       
-        renderHeader={this.listHeader}
+       <ListView
         renderFooter={this.listLoading}
         renderRow={this.listItem}
         dataSource={this.state.data}
         onEndReached={this.handleLoadMore}
-      />
+      /> 
       </View>
     );
   }
@@ -134,22 +127,22 @@ const styles = {
   },
   book_title:{
     fontSize:30,
-    marginLeft:40,
+    marginLeft:102,
+    marginTop:-44,
     fontWeight:800
   },
   book_author:{
-    float:"left",
     fontSize:26,
-    fontWeight:400,
-    width:264,
-    textOverflow:"ellipsis"
+    color:"rgb(174,174,178)",
+    width:500,
+    flexWrap:"noWrap",
+    height:27,
+    textOverflow:'ellipsis',
+    marginTop:15,
+    marginLeft:115,
+   
   },
-  book_press:{
-    fontSize:26,
-    fontWeight:400,
-    marginLeft:18,
-    textOverflow:"ellipsis"
-  },
+ 
   text: {
     fontSize: 28,
     color: '#000000',
