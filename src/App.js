@@ -7,8 +7,7 @@ import TextInput from "rax-textinput";
 import Link from "rax-link";
 
 const stylechange = 0.56;
-//  const storage = require("@weex-module/storage");
-const storage = require("@weex-module/storage");
+
 let image = {
   uri: "http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/search_picture.png"
 };
@@ -16,17 +15,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      text: "",
+      page: 1
     };
   }
   _handleParams() {
-    console.log(storage);
-    storage.setItem("keywords", this.text, event => {
-      if (e.result == "success") console.log("set success");
-    });
-    // href = "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js"
     window.location.href =
-      "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js";
+      "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js" +
+      "/?keywords=" +
+      this.state.text +
+      "&page=" +
+      this.state.page;
   }
   render() {
     return (

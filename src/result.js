@@ -66,18 +66,34 @@ class ListViewDemo extends Component {
     super(props);
     this.state = {
       index: 0,
-      data: listData
+      data: listData,
+      keywords: "",
+      page: 1
     };
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    this.urlDeal();
+    this._getBook();
+  }
   _getBook() {
     let option = {};
-    option.page = 1;
-    option.keywords = storage.getItem("keywords", event => {
-      if (event.result == "success") console.log("get success");
+    option.page = this.state.page;
+    option.keywords = this.state.keywords;
+    Api.getBook(option).resolve(res => {
+      this.setState({
+        data: res.result
+      });
     });
-    Api.getBook();
+  }
+  urlDeal() {
+    let param = window.location.href.split("&");
+    let keywords = param[0].split("keywords=")[1];
+    let page = param[1].split("page=")[1];
+    this.setState({
+      keywords,
+      page
+    });
   }
   listLoading = () => {
     if (this.state.index < 4) {
