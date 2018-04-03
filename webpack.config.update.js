@@ -3,8 +3,8 @@ module.exports = function update(webpackConfig) {
   webpackConfig.entry["second.bundle"] = [
     "./node_modules/rax-scripts/lib/dev-utils/webpackHotDevClient.js",
     "./node_modules/rax-hot-loader/patch.js",
-    "./src/resultRender.js"
+    "./src/second.js"
   ];
-  console.log("here", webpackConfig);
+  //console.log("here", webpackConfig);
   return webpackConfig;
 };

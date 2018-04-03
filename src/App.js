@@ -1,93 +1,110 @@
-import {createElement, Component, render} from 'rax';
-import View from 'rax-view';
-import Text from 'rax-text';
-import Button from 'rax-button';
-import Image from 'rax-image';
-import TextInput from 'rax-textinput';
- const stylechange = 0.56;
+import { createElement, Component, render } from "rax";
+import View from "rax-view";
+import Text from "rax-text";
+import Button from "rax-button";
+import Image from "rax-image";
+import TextInput from "rax-textinput";
+import Link from "rax-link";
+
+const stylechange = 0.56;
+//  const storage = require("@weex-module/storage");
+const storage = require("@weex-module/storage");
 let image = {
-  uri:"http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/search_picture.png"
-}
+  uri: "http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/search_picture.png"
+};
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
+    this.state = {
+      text: ""
+    };
+  }
+  _handleParams() {
+    console.log(storage);
+    storage.setItem("keywords", this.text, event => {
+      if (e.result == "success") console.log("set success");
+    });
+    // href = "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js"
+    window.location.href =
+      "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js";
   }
   render() {
     return (
-     
       <View style={styles.App}>
-      <Image style = {styles.searchCenterPicture} source = {image} resizeMode = "contain" />
+        <Image
+          style={styles.searchCenterPicture}
+          source={image}
+          resizeMode="contain"
+        />
         <TextInput
           multiline={true}
           style={styles.searchInput}
-          placeholder= "输入关键字查找书籍"
-          />
-        <Button style = {styles.searchButton} onPress={(evt) => { window.location = '/result' }}>
-        	
-        		<View style = {styles.searchButtonContainner}>
-            <Text style ={styles.searchButtonText}>搜索</Text>
-            </View>
-        	
-        </Button>
-      </View> 
+          placeholder="输入关键字查找书籍"
+        />
+        <Link
+          onClick={this._handleParams.bind(this)}
+          style={styles.searchButton}
+          onChangeText={text => {
+            this.setState({ text });
+          }}
+        >
+          <View style={styles.searchButtonContainner}>
+            <Text style={styles.searchButtonText}>搜索</Text>
+          </View>
+        </Link>
+      </View>
     );
   }
 }
 
-const styles={
-
-  App:{
-    backgroundColor:"rgb(239,239,244)",
-    width:750,
-    height:1334,
-    alignItems: 'center'
+const styles = {
+  App: {
+    backgroundColor: "rgb(239,239,244)",
+    width: 750,
+    height: 1334,
+    alignItems: "center"
   },
-  searchInput:{
-    position:"absolute",
-    top:462,
-    left:100,
-    width:540,
-    height:100,
-    backgroundColor:"rgb(255,255,255)",
-    fontSize:34,
-    padding:20,
-      
+  searchInput: {
+    position: "absolute",
+    top: 462,
+    left: 100,
+    width: 540,
+    height: 100,
+    backgroundColor: "rgb(255,255,255)",
+    fontSize: 34,
+    padding: 20
   },
-  searchCenterPicture:{
-      position:"absolute",
-      top:100,
-      left:200,
-      width:350,
-      height:240,
-     
+  searchCenterPicture: {
+    position: "absolute",
+    top: 100,
+    left: 200,
+    width: 350,
+    height: 240
   },
-  searchButton:{
-    position:"absolute",
-      top:614,
-      left:100,
-      width:350,
-      height:240,
-    backgroundColor:"rgb(103,103,250)",
-    borderRadius:"5%",
-    height:100,
-    width:552,
-    
-
+  searchButton: {
+    position: "absolute",
+    top: 614,
+    left: 100,
+    width: 350,
+    height: 240,
+    backgroundColor: "rgb(103,103,250)",
+    borderRadius: "5%",
+    height: 100,
+    width: 552
   },
-  searchButtonContainner:{
-    height:100,
-    width:552,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+  searchButtonContainner: {
+    height: 100,
+    width: 552,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  searchButtonText:{
-    color:"rgb(255,255,255)",
-    fontSize:36
+  searchButtonText: {
+    color: "rgb(255,255,255)",
+    fontSize: 36
   }
-
-}
- export default App;
+};
+export default App;
 
 //  class TextAreaDemo extends Component {
 //   state = {
