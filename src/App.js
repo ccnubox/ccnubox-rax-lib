@@ -20,7 +20,7 @@ class App extends Component {
     };
   }
   _handleParams() {
-    window.location.href =
+    window.location =
       "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js" +
       "/?keywords=" +
       this.state.text +
@@ -38,14 +38,14 @@ class App extends Component {
         <TextInput
           multiline={true}
           style={styles.searchInput}
+          onChangeText={text => {
+            this.setState({ text });
+          }}
           placeholder="输入关键字查找书籍"
         />
         <Link
           onClick={this._handleParams.bind(this)}
           style={styles.searchButton}
-          onChangeText={text => {
-            this.setState({ text });
-          }}
         >
           <View style={styles.searchButtonContainner}>
             <Text style={styles.searchButtonText}>搜索</Text>
