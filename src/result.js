@@ -5,7 +5,6 @@ import Text from "rax-text";
 import ListView from "rax-listview";
 import Image from "rax-image";
 import BookService from "../services/Books";
-//const storage = require("@weex-module/storage");
 let icon = {
   uri: "http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/book_icon.png"
 };
@@ -16,15 +15,176 @@ class ListViewDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0,
-      data: [{}],
+      data: [
+        {
+          book: "1.朝花夕拾",
+          author: "从维熙著",
+          publisher: "高等教育出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0001315032",
+          id: "0001315032"
+        },
+        {
+          book: "2.鲁迅全集.第二卷.重排第1版",
+          author: "鲁迅著",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0001424533",
+          id: "0001424533"
+        },
+        {
+          book: "3.朝花夕拾:《江汉大学报》优秀作品集锦",
+          author: "雷惠萍主编",
+          publisher: "武汉出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0001296157",
+          id: "0001296157"
+        },
+        {
+          book: "4.朝花夕拾",
+          author: "鲁迅著",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000053281",
+          id: "0000053281"
+        },
+        {
+          book: "5.鲁迅全集",
+          author: "鲁迅",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0001043861",
+          id: "0001043861"
+        },
+        {
+          book: "6.鲁迅著作初版精选集",
+          author: "杨阳",
+          publisher: "中央编译出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0001011850",
+          id: "0001011850"
+        },
+        {
+          book: "7.朝花夕拾:一九二六一二七年著.第2版",
+          author: "鲁迅著 鲁迅全集出版社",
+          publisher: "民国36",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000486974",
+          id: "0000486974"
+        },
+        {
+          book: "8.朝花夕拾",
+          author: "亦舒著",
+          publisher: "新世界出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000642492",
+          id: "0000642492"
+        },
+        {
+          book: "9.鲁迅全集",
+          author: "鲁迅",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000448119",
+          id: "0000448119"
+        },
+        {
+          book: "10.朝花夕拾",
+          author: "鲁迅 [著]",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000484688",
+          id: "0000484688"
+        },
+        {
+          book: "11.朝花夕拾十篇",
+          author: "鲁迅著",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000475534",
+          id: "0000475534"
+        },
+        {
+          book: "12.鲁迅全集.重排第1版",
+          author: "鲁迅",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000450895",
+          id: "0000450895"
+        },
+        {
+          book: "13.鲁迅全集.二,彷徨,野草,朝花夕拾,故事新编",
+          author: "鲁迅,",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000450840",
+          id: "0000450840"
+        },
+        {
+          book: "14.朝花夕拾",
+          author: "鲁迅 [著]",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000450761",
+          id: "0000450761"
+        },
+        {
+          book: "15.朝花夕拾:插图本",
+          author: "鲁迅",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000375311",
+          id: "0000375311"
+        },
+        {
+          book: "16.呐喊 彷徨 朝花夕拾",
+          author: "鲁迅,",
+          publisher: "内蒙古人民出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000298404",
+          id: "0000298404"
+        },
+        {
+          book: "17.青葱可爱的水横枝:《朝花夕拾》心读",
+          author: "王景山编著",
+          publisher: "首都师范大学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000297648",
+          id: "0000297648"
+        },
+        {
+          book: "18.Dawn blossoms plucked at dusk /",
+          author: "Lu, Hs鮱n Foreign Languages",
+          publisher: "Press,",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000115305",
+          id: "0000115305"
+        },
+        {
+          book: "19.鲁迅全集.第二卷,彷徨 野草 朝花夕拾 故事新编",
+          author: "鲁迅",
+          publisher: "人民文学出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000048998",
+          id: "0000048998"
+        },
+        {
+          book: "20.《朝花夕拾》浅析",
+          author: "绍兴鲁迅纪念馆,厦门大学中文系编著",
+          publisher: "福建人民出版社",
+          bid: "fff",
+          bookurl: "http://202.114.34.15/opac/item.php?marc_no=0000040864",
+          id: "0000040864"
+        }
+      ],
+
       keywords: "朝花夕拾",
       page: 1
     };
   }
   componentWillMount() {
     //  this._urlDeal();
-    this._getBook();
+    // this._getBook();
   }
   //处理url，分解出参数
   // _urlDeal() {
@@ -45,7 +205,8 @@ class ListViewDemo extends Component {
       res => {
         let data = res.result;
         //error!
-        this.setState({ data });
+        //this.setState({ data });
+        alert(data);
       },
       err => {
         console.log(err);
@@ -53,17 +214,13 @@ class ListViewDemo extends Component {
       }
     );
   }
-  // listLoading = () => {
-  //   if (this.state.index < 4) {
-  //     return (
-  //       <View style={styles.loading}>
-  //         <Text style={styles.text}>加载中...</Text>
-  //       </View>
-  //     );
-  //   } else {
-  //     return null;
-  //   }
-  // };
+  listLoading = () => {
+    return (
+      <View style={styles.loading}>
+        <Text style={styles.text}>加载中...</Text>
+      </View>
+    );
+  };
   listItem = (item, index) => {
     return (
       <View style={styles.book_content_containner}>
@@ -77,24 +234,13 @@ class ListViewDemo extends Component {
       </View>
     );
   };
-  // handleLoadMore = () => {
-  //   setTimeout(() => {
-  //     this.state.index++;
-  //     if (this.state.index < 5) {
-  //       this.state.data.push(
-  //         { name1: "loadmore 2" },
-  //         { name1: "loadmore 3" },
-  //         { name1: "loadmore 4" },
-  //         { name1: "loadmore 5" },
-  //         { name1: "loadmore 2" },
-  //         { name1: "loadmore 3" },
-  //         { name1: "loadmore 4" },
-  //         { name1: "loadmore 5" }
-  //       );
-  //     }
-  //     this.setState(this.state);
-  //   }, 1000);
-  // };
+  handleLoadMore = () => {
+    setTimeout(() => {
+      let page = this.state.page++;
+      this.setState({ page });
+      this._getBook();
+    }, 1000);
+  };
 
   render() {
     return (
@@ -104,7 +250,7 @@ class ListViewDemo extends Component {
           renderFooter={this.listLoading}
           renderRow={this.listItem}
           dataSource={this.state.data}
-          // onEndReached={this.handleLoadMore}
+          onEndReached={this.handleLoadMore}
         />
       </View>
     );
