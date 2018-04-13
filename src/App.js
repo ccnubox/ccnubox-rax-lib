@@ -20,12 +20,12 @@ class App extends Component {
     };
   }
   _handleParams() {
-    window.location =
-      "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js" +
-      "/?keywords=" +
-      this.state.text +
-      "&page=" +
-      this.state.page;
+    // window.location =
+    //   "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js" +
+    //   "/?keywords=" +
+    //   this.state.text +
+    //   "&page=" +
+    //   this.state.page;
   }
   render() {
     return (
@@ -44,7 +44,12 @@ class App extends Component {
           placeholder="输入关键字查找书籍"
         />
         <Link
-          onClick={this._handleParams.bind(this)}
+          href={
+            "./second.bundle.js/?keywords=" +
+            this.state.text +
+            "&page=" +
+            this.state.page
+          }
           style={styles.searchButton}
         >
           <View style={styles.searchButtonContainner}>
