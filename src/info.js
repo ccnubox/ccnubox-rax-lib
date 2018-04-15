@@ -10,7 +10,7 @@ class ListViewDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 1,
+      id: 138,
       info: {}
     };
   }
@@ -23,12 +23,14 @@ class ListViewDemo extends Component {
     option.id = this.state.id;
     BookService.getSingeBookInfo(option).then(
       res => {
+        alert(res);
         let info = res;
-        //error!
-        this.setState({ info });
+
+        //this.setState({ info });
       },
       err => {
-        console.log(err);
+        // for(let item in err)
+        alert("item：" + err.statusText);
         throw err;
       }
     );
@@ -37,7 +39,7 @@ class ListViewDemo extends Component {
   render() {
     return (
       <View style={styles.App}>
-        <View style={styles.detailContainner}>
+        {/* <View style={styles.detailContainner}>
           <View style={styles.title} />
           <View style={styles.publisher} />
           <View style={styles.content} />
@@ -49,7 +51,7 @@ class ListViewDemo extends Component {
               <th>馆藏地址</th>
               <th>书刊状态</th>
             </tr>
-            {info.books.foeach((book, index) => {
+            {this.state.info.books.foreach((book, index) => {
               return (
                 <tr>
                   <td>{book.tid}</td>
@@ -63,7 +65,7 @@ class ListViewDemo extends Component {
               );
             })}
           </table>
-        </View>
+        </View> */}
       </View>
     );
   }
@@ -71,7 +73,8 @@ class ListViewDemo extends Component {
 
 const styles = {
   App: {
-    backgroundColor: "rgb(239,239,244)",
+    backgroundColor: "black",
+    // backgroundColor: "rgb(239,239,244)",
     width: 750,
     height: 1334,
     alignItems: "center"
