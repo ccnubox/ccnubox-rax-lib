@@ -5,17 +5,35 @@ import Text from "rax-text";
 import BookService from "../services/Books";
 
 // 将 item 定义成组件
+const TITLE_NAME = "题名/责任人";
+const PUBLISHER = "出版发行项";
+const CONTENT = "内容简介";
+const MORE_LINK = "更多";
 
 class ListViewDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 138,
+      id: "0001315032",
+      publisher: "",
       info: {}
     };
   }
   componentWillMount() {
+    this._delUrl();
     this._getInfo();
+  }
+  _delUrl() {
+    alert("query:" + window.location.href);
+    let query = window.location.href.split("?")[1];
+    let queryArr = query.split("&");
+    alert("queryArr:" + queryArr);
+    let id = queryArr[0].split("=")[1];
+    let publisher = queryArr[1].split("=")[1];
+    this.setState({
+      id,
+      publisher
+    });
   }
   // 路由拉取单个书籍信息
   _getInfo() {
@@ -23,14 +41,12 @@ class ListViewDemo extends Component {
     option.id = this.state.id;
     BookService.getSingeBookInfo(option).then(
       res => {
-        alert(res);
+        //  alert(res);
         let info = res;
-
-        //this.setState({ info });
+        this.setState({ info });
+        alert(this.state.info);
       },
       err => {
-        // for(let item in err)
-        alert("item：" + err.statusText);
         throw err;
       }
     );
@@ -39,10 +55,22 @@ class ListViewDemo extends Component {
   render() {
     return (
       <View style={styles.App}>
-        {/* <View style={styles.detailContainner}>
-          <View style={styles.title} />
-          <View style={styles.publisher} />
+        <View style={styles.detailContainner}>
+          <View style={styles.title}>
+            <h2> {TITLE_NAME}</h2>
+            <p>
+              {" "}
+              {this.state.info.book}&nbsp;{this.state.info.author}
+            </p>
+          </View>
+          <View style={styles.publisher}>
+            <h2>{PUBLISHER}</h2>
+            <p>{this.state.publisher}</p>
+          </View>
           <View style={styles.content} />
+          <h2>{CONTENT}</h2>
+          <p>{this.state.info.intro}</p>
+          <Link>{MORE_LINK}</Link>
         </View>
         <View style={styles.statusTab}>
           <table>
@@ -65,7 +93,7 @@ class ListViewDemo extends Component {
               );
             })}
           </table>
-        </View> */}
+        </View>
       </View>
     );
   }

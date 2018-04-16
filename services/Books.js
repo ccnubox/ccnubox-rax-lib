@@ -15,7 +15,7 @@ const BookService = {
   getSingeBookInfo(option) {
     return request({
       method: "GET",
-      url: "https://ccnubox.muxixyz.com/api/lib/detail/" + option.id
+      url: "https://ccnubox.muxixyz.com/api/lib/detail/" + option.id + "/"
     });
   }
 };

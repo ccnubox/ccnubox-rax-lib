@@ -19,14 +19,9 @@ class App extends Component {
       page: 1
     };
   }
-  _handleParams() {
-    // window.location =
-    //   "http://10.146.101.20:9999/js/second.bundle.js?_wx_tpl=http://10.146.101.20:9999/js/second.bundle.js" +
-    //   "/?keywords=" +
-    //   this.state.text +
-    //   "&page=" +
-    //   this.state.page;
-  }
+  updateText = text => {
+    this.setState({ text });
+  };
   render() {
     return (
       <View style={styles.App}>
@@ -38,17 +33,20 @@ class App extends Component {
         <TextInput
           multiline={true}
           style={styles.searchInput}
-          onChangeText={text => {
-            this.setState({ text });
-          }}
+          onChange={event => this.updateText(event.nativeEvent.text)}
+          onInput={event => this.updateText(event.nativeEvent.text)}
           placeholder="输入关键字查找书籍"
         />
         <Link
           href={
-            "./second.bundle.js/?keywords=" +
-            this.state.text +
-            "&page=" +
-            this.state.page
+            this.state.text !== ""
+              ? encodeURI(
+                  "./second.bundle.js/?keywords=" +
+                    this.state.text +
+                    "&page=" +
+                    this.state.page
+                )
+              : null
           }
           style={styles.searchButton}
         >
