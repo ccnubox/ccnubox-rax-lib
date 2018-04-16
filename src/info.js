@@ -41,10 +41,10 @@ class ListViewDemo extends Component {
     option.id = this.state.id;
     BookService.getSingeBookInfo(option).then(
       res => {
-        //  alert(res);
+        alert(res);
         let info = res;
-        this.setState({ info });
-        alert(this.state.info);
+        // this.setState({ info });
+        //alert(this.state.info);
       },
       err => {
         throw err;

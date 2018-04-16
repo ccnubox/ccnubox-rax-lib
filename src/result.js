@@ -46,9 +46,17 @@ class ListViewDemo extends Component {
     option.keywords = this.state.keywords;
     BookService.getBook(option).then(
       res => {
-        this.setState({
-          data: res.result
-        });
+        // alert(this.state)
+        this.setState(
+          {
+            data: res.result
+          },
+          r => {
+            alert(r);
+          }
+        );
+        alert(this.state.data);
+        // alert(data)
       },
       err => {
         throw err;
