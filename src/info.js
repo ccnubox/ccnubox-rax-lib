@@ -2,6 +2,7 @@
 import { createElement, Component, render } from "rax";
 import View from "rax-view";
 import Text from "rax-text";
+import Link from "rax-link";
 import BookService from "../services/Books";
 
 // 将 item 定义成组件
