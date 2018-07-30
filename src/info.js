@@ -11,24 +11,53 @@ const PUBLISHER = "出版发行项";
 const CONTENT = "内容简介";
 const MORE_LINK = "更多";
 
+let info = {
+  bid: "I267/CWX6 ",
+  book: "朝花夕拾",
+  author: "从维熙著",
+  intro: "1234564687",
+
+  books: [
+    {
+      status: "保留本",
+      room: "6F__中文图书阅览室(一)",
+      bid: "I267/CWX6 ",
+      tid: "T112852325",
+      date: ""
+    },
+    {
+      status: "可借",
+      room: "2F__中文图书借阅室(一)",
+      bid: "I267/CWX6 ",
+      tid: "T112852326",
+      date: ""
+    },
+    {
+      status: "可借",
+      room: "2F__中文图书借阅室(一)",
+      bid: "I267/CWX6 ",
+      tid: "T112852327",
+      date: ""
+    }
+  ]
+};
 class ListViewDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       id: "0001315032",
       publisher: "",
-      info: {}
+      info: info
     };
   }
   componentWillMount() {
-    this._delUrl();
-    this._getInfo();
+    //this._delUrl();
+    // this._getInfo();
   }
   _delUrl() {
-    alert("query:" + window.location.href);
     let query = window.location.href.split("?")[1];
     let queryArr = query.split("&");
-    alert("queryArr:" + queryArr);
+
     let id = queryArr[0].split("=")[1];
     let publisher = queryArr[1].split("=")[1];
     this.setState({
@@ -42,9 +71,9 @@ class ListViewDemo extends Component {
     option.id = this.state.id;
     BookService.getSingeBookInfo(option).then(
       res => {
-        alert(res);
+        //alert(res);
         let info = res;
-        // this.setState({ info });
+        this.setState({ info });
         //alert(this.state.info);
       },
       err => {
@@ -54,46 +83,45 @@ class ListViewDemo extends Component {
   }
 
   render() {
+    console.log(this.state.info.books);
     return (
       <View style={styles.App}>
-        <View style={styles.detailContainner}>
+        <View style={styles.detail_containner}>
           <View style={styles.title}>
-            <h2> {TITLE_NAME}</h2>
-            <p>
-              {" "}
+            <View style={styles.static_title}> {TITLE_NAME}</View>
+            <View style={styles.details}>
               {this.state.info.book}&nbsp;{this.state.info.author}
-            </p>
+            </View>
           </View>
           <View style={styles.publisher}>
-            <h2>{PUBLISHER}</h2>
-            <p>{this.state.publisher}</p>
+            <View style={styles.static_title}>{PUBLISHER}</View>
+            <View style={styles.details}>{this.state.publisher || "无"}</View>
           </View>
           <View style={styles.content} />
-          <h2>{CONTENT}</h2>
-          <p>{this.state.info.intro}</p>
-          <Link>{MORE_LINK}</Link>
+          <View style={styles.static_title}>{CONTENT}</View>
+          <View style={styles.details}>{this.state.info.intro || "无"}</View>
+          {/* {this.state.info.intro ? <Link style = {styles.link}>{MORE_LINK} </Link> : ""} */}
         </View>
         <View style={styles.statusTab}>
-          <table>
-            <tr>
-              <th>索书号</th>
-              <th>馆藏地址</th>
-              <th>书刊状态</th>
-            </tr>
-            {this.state.info.books.foreach((book, index) => {
-              return (
-                <tr>
-                  <td>{book.tid}</td>
-                  <td>{book.room}</td>
-                  <td>
-                    {book.status}-应还日期{book.status === "借出"
-                      ? <br /> + book.date
-                      : null}
-                  </td>
-                </tr>
-              );
-            })}
-          </table>
+          <View style={styles.tr}>
+            <View style={styles.th}>索书号</View>
+            <View style={styles.th}>馆藏地址</View>
+            <View style={styles.th}>书刊状态</View>
+          </View>
+          {this.state.info.books.map(book => {
+            return (
+              <View style={styles.tr}>
+                <View style={styles.td}>{book.tid}</View>
+                <View style={styles.td}>{book.room}</View>
+                <View style={styles.td}>
+                  {book.status}
+                  {book.status === "借出"
+                    ? "-应还日期" + <br /> + book.date
+                    : null}
+                </View>
+              </View>
+            );
+          })}
         </View>
       </View>
     );
@@ -102,70 +130,81 @@ class ListViewDemo extends Component {
 
 const styles = {
   App: {
-    backgroundColor: "black",
-    // backgroundColor: "rgb(239,239,244)",
-    width: 750,
-    height: 1334,
-    alignItems: "center"
-  },
-  awayTop: {
-    width: 750,
-    height: 18,
+    paddingTop: 82,
+    paddingLeft: 60,
+    paddingRight: 60,
     backgroundColor: "rgb(239,239,244)"
-  },
-  book_content_containner: {
-    backgroundColor: "rgb(255,255,255)",
-    paddingTop: 41,
-    paddingButtom: 41,
-    paddingLeft: 45,
-    marginTop: 20,
-    height: 161,
-    width: 750
+    // flex:1,
+    // display:'flex',
+    // justifyContent:"center",
   },
 
-  book_icon: {
-    position: "relative",
-    top: 15,
-    width: 60,
-    height: 44
-  },
-  book_title: {
-    fontSize: 30,
-    marginLeft: 102,
-    marginTop: -44,
-    fontWeight: 800
-  },
-  book_author: {
-    fontSize: 26,
-    color: "rgb(174,174,178)",
-    width: 500,
-    whiteSpace: "noWrap",
-    height: 30,
-    marginTop: 15,
-    marginLeft: 115,
-    overflow: "hidden",
-    textOverflow: "ellipsis"
+  detail_containner: {
+    // flex:1,
+    backgroundColor: "rgb(239,239,244)",
+    //  display:'flex',
+    flexDirection: "column"
   },
 
-  text: {
+  static_title: {
+    color: "rgb(103,103,250)",
+    fontSize: 30
+  },
+  details: {
     fontSize: 28,
-    color: "#000000",
-    fontSize: 28,
-    padding: 40
+    marginTop: 2,
+    marginBottom: 38
   },
-  item1: {
-    height: 110,
-    backgroundColor: "#909090",
-    marginBottom: 3
+
+  statusTab: {
+    //flex:2.5,
+    marginTop: 16,
+    display: "flex",
+    flexDirection: "column",
+    borderColor: "rgb(103,103,250)",
+    fontSize: 28
   },
-  item2: {
-    height: 110,
-    backgroundColor: "#e0e0e0",
-    marginBottom: 3
+  // first_tr: {
+  //   backgroundColor:"rgb(103,103,250)",
+
+  //   display:'flex',
+  //   flex:1,
+  //   flexDirection:'row',
+  //   justifyContent:"center",
+  //   alignItem:'center'
+
+  // },
+  tr: {
+    color: "rgb(67,67,67)",
+    display: "flex",
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItem: "center"
   },
-  loading: {
-    padding: 50,
-    textAlign: "center"
+  th: {
+    height: 80,
+    flex: 1,
+    fontColor: "white",
+    fontWeight: 600,
+    backgroundColor: "rgb(103,103,250)",
+    justifyContent: "center",
+    borderStyle: "solid",
+    borderColor: "rgb(103,103,250)",
+    borderWidth: 2,
+    paddingLeft: 20,
+    paddingRight: 20
+  },
+  td: {
+    borderStyle: "solid",
+    borderColor: "rgb(103,103,250)",
+    borderWidth: 2,
+    justifyContent: "center",
+    alignItem: "center",
+    height: 120,
+    flex: 1,
+    paddingLeft: 20,
+    paddingRight: 20
   }
 };
 export default ListViewDemo;
