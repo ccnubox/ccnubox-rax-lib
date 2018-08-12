@@ -1,4 +1,4 @@
-import request from "../box-ui/util/request";
+import request from "../src/box-ui/util/request";
 
 const BookService = {
   getBook(option) {

@@ -5,11 +5,10 @@ import Text from "rax-text";
 import ListView from "rax-listview";
 import Image from "rax-image";
 import BookService from "../services/Books";
-import Link from "rax-link";
-
-let icon = {
-  uri: "http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/book_icon.png"
-};
+import icon from "./assets/book_icon.png";
+import { parseSearchString } from "./box-ui/util";
+const native = require("@weex-module/test");
+import Touchable from "rax-touchable";
 
 // 将 item 定义成组件
 class ListViewDemo extends Component {
@@ -21,30 +20,37 @@ class ListViewDemo extends Component {
       noMore: false
     };
   }
-  componentWillMount() {
-    //this._urlDeal();
-    //this._getBook();
+  componentDidMount() {
+    let qd;
+    if (window.location.search) {
+      qd = parseSearchString(window.location.search);
+    }
+
+    if (!qd) {
+      alert("参数缺失错误");
+    }
+
+    const keywords = qd.keyword[0];
+    this.setState({
+      keywords
+    });
+    this._getBook(keywords);
   }
 
-  //处理url，分解出参数
-  _urlDeal() {
-    let param = decodeURI(window.location.href).split("&");
-    let keywords = param[0].split("keywords=")[1];
-    let page = param[1].split("page=")[1];
-    this.setState({
-      keywords,
-      page
-    });
-  }
+  nav = id => {
+    native.push(`ccnubox://lib.search.detail?id=${id}`);
+  };
+
   // 路由拉取书籍数据
-  _getBook() {
+  _getBook(keywords) {
     let option = {};
     option.page = this.state.page;
-    option.keywords = this.state.keywords;
+    option.keywords = keywords || this.state.keywords;
     BookService.getBook(option).then(
       res => {
         let data = res.result;
         this.setState({ data });
+        native.changeLoadingStatus(true);
       },
       err => {
         throw err;
@@ -63,31 +69,42 @@ class ListViewDemo extends Component {
     );
   };
   listItem = (item, index) => {
-    let title = `《${item.book}》`;
+    let title = `${item.book}`;
     return (
-      <Link
-        style={styles.book_content_containner}
-        href={
-          "./third.bundle.js/?id=" + item.id + "&publisher=" + item.publisher
-        }
+      <View
+        style={[
+          styles.book_content_containner,
+          index === 0 ? styles.first_item : {}
+        ]}
       >
-        <View style={styles.icon_containner}>
-          <Image source={icon} style={styles.book_icon} />
-        </View>
-        <View style={styles.book_info_containner}>
-          <Text style={styles.book_title} numberOfLines={1}>
-            {title}
-          </Text>
-          <View style={styles.book_owner_containner}>
-            <Text style={styles.book_author} numberOfLines={1}>
-              {item.author}
-            </Text>
-            <Text style={styles.book_publisher_containner} numberOfLines={1}>
-              {item.publisher}
-            </Text>
+        <Touchable
+          onPress={() => {
+            this.nav(item.id);
+          }}
+        >
+          <View style={styles.book_item_container}>
+            <View style={styles.icon_containner}>
+              <Image source={icon} style={styles.book_icon} />
+            </View>
+            <View style={styles.book_info_containner}>
+              <Text style={styles.book_title} numberOfLines={1}>
+                {title}
+              </Text>
+              <View style={styles.book_owner_containner}>
+                <Text style={styles.book_author} numberOfLines={1}>
+                  {item.author}
+                </Text>
+                <Text
+                  style={styles.book_publisher_containner}
+                  numberOfLines={1}
+                >
+                  {item.publisher}
+                </Text>
+              </View>
+            </View>
           </View>
-        </View>
-      </Link>
+        </Touchable>
+      </View>
     );
   };
   handleLoadMore = () => {
@@ -133,49 +150,59 @@ class ListViewDemo extends Component {
 
 const styles = {
   App: {
-    backgroundColor: "rgb(239,239,244)",
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
-    flexDirection: "column",
-    overflow: "hidden"
+    backgroundColor: "#efeff4",
+    flex: 1,
+    display: "flex"
   },
+
+  first_item: {
+    marginTop: 40
+  },
+
+  book_item_container: {
+    width: 630,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  last_item: {},
 
   book_content_containner: {
     flex: 1,
     backgroundColor: "rgb(255,255,255)",
-    paddingTop: 41,
     display: "flex",
+    alignItems: "center",
     justifyContent: "center",
-    flexDirection: "row",
-    overflow: "hidden",
-    height: 161
+    height: 242,
+    marginBottom: 20
   },
   icon_containner: {
-    flex: 1.5,
-    justifyContent: "center",
-    alignItems: "center"
+    display: "flex",
+    width: 90,
+    height: 60,
+    marginRight: 60,
+    alignItems: "center",
+    justifyContent: "center"
   },
   book_icon: {
-    width: 60,
-    height: 44
+    width: 90,
+    height: 60
   },
   book_info_containner: {
-    flex: 3.5,
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    flexWrap: "nowrap",
-    overflow: "hidden"
+    flexWrap: "nowrap"
   },
 
   book_title: {
+    color: "#434343",
+    width: 400,
     fontSize: 30,
-    flex: 1,
-    fontWeight: 800,
-    flexWrap: "nowrap",
     overflow: "hidden",
-    textOverflow: "ellipsis"
+    textOverflow: "ellipsis",
+    marginBottom: 35
   },
   book_owner_containner: {
     flex: 1,
@@ -186,17 +213,20 @@ const styles = {
   },
 
   book_author: {
-    fontSize: 26,
+    width: 200,
+    fontSize: 28,
     flex: 1,
-    color: "rgb(174,174,178)",
+    color: "#434343",
     flexWrap: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis"
   },
   book_publisher_containner: {
     flex: 1,
-    fontSize: 26,
-    color: "rgb(174,174,178)",
+    width: 200,
+    textAlign: "right",
+    fontSize: 28,
+    color: "#434343",
     flexWrap: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis"

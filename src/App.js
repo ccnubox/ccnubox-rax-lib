@@ -1,16 +1,13 @@
 import { createElement, Component, render } from "rax";
 import View from "rax-view";
-import Text from "rax-text";
-import Button from "rax-button";
 import Image from "rax-image";
-import TextInput from "rax-textinput";
-import Link from "rax-link";
+import searchPicture from "./assets/search_picture.png";
+import BoxButton from "./box-ui/common/button";
+import BoxInput from "./box-ui/common/text-input";
+const native = require("@weex-module/test");
 
 const stylechange = 0.56;
 
-let image = {
-  uri: "http://ocm66x3nz.bkt.clouddn.com/ios_ccnubox/search_picture.png"
-};
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,22 +19,34 @@ class App extends Component {
   updateText = text => {
     this.setState({ text });
   };
+  nav = () => {
+    if (this.state.text === "") {
+      alert("请输入关键词！");
+    } else {
+      native.push(`ccnubox://lib.search.result?keyword=${this.state.text}`);
+    }
+  };
   render() {
     return (
       <View style={styles.App}>
         <Image
           style={styles.searchCenterPicture}
-          source={image}
+          source={searchPicture}
           resizeMode="contain"
         />
-        <TextInput
-          multiline={true}
+        <BoxInput
           style={styles.searchInput}
           onChange={event => this.updateText(event.nativeEvent.text)}
           onInput={event => this.updateText(event.nativeEvent.text)}
           placeholder="输入关键字查找书籍"
         />
-        <Link
+        <BoxButton
+          onPress={this.nav}
+          style={styles.searchButtonContainner}
+          textStyle={styles.searchButtonText}
+          text="搜索"
+        />
+        {/* <Link
           href={
             this.state.text !== ""
               ? encodeURI(
@@ -50,10 +59,8 @@ class App extends Component {
           }
           style={styles.searchButton}
         >
-          <View style={styles.searchButtonContainner}>
-            <Text style={styles.searchButtonText}>搜索</Text>
-          </View>
-        </Link>
+          
+        </Link> */}
       </View>
     );
   }
@@ -62,47 +69,33 @@ class App extends Component {
 const styles = {
   App: {
     backgroundColor: "rgb(239,239,244)",
-    width: 750,
-    height: 1334,
-    alignItems: "center"
+    display: "flex",
+    flex: 1,
+    alignItems: "center",
+    paddingTop: 100
   },
   searchInput: {
-    position: "absolute",
-    top: 462,
-    left: 100,
-    width: 540,
+    width: 552,
     height: 100,
-    backgroundColor: "rgb(255,255,255)",
     fontSize: 34,
-    padding: 20
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    marginBottom: 50
   },
   searchCenterPicture: {
-    position: "absolute",
-    top: 100,
-    left: 200,
-    width: 350,
-    height: 240
-  },
-  searchButton: {
-    position: "absolute",
-    top: 614,
-    left: 100,
     width: 350,
     height: 240,
-    backgroundColor: "rgb(103,103,250)",
-    borderRadius: "5%",
+    marginBottom: 120
+  },
+  searchButton: {
     height: 100,
     width: 552
   },
   searchButtonContainner: {
     height: 100,
-    width: 552,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center"
+    width: 552
   },
   searchButtonText: {
-    color: "rgb(255,255,255)",
     fontSize: 36
   }
 };
