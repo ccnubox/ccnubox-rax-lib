@@ -5,8 +5,14 @@ import searchPicture from "./assets/search_picture.png";
 import BoxButton from "./box-ui/common/button";
 import BoxInput from "./box-ui/common/text-input";
 const native = require("@weex-module/test");
+import Notification from "./box-ui/common/notification";
 
-const stylechange = 0.56;
+const notificationStyle = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: 750
+};
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +35,7 @@ class App extends Component {
   render() {
     return (
       <View style={styles.App}>
+        <Notification pageId="com.muxistudio.lib" style={notificationStyle} />
         <Image
           style={styles.searchCenterPicture}
           source={searchPicture}
@@ -46,21 +53,6 @@ class App extends Component {
           textStyle={styles.searchButtonText}
           text="搜索"
         />
-        {/* <Link
-          href={
-            this.state.text !== ""
-              ? encodeURI(
-                  "./second.bundle.js/?keywords=" +
-                    this.state.text +
-                    "&page=" +
-                    this.state.page
-                )
-              : null
-          }
-          style={styles.searchButton}
-        >
-          
-        </Link> */}
       </View>
     );
   }

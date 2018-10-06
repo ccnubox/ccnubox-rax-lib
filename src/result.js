@@ -10,7 +10,7 @@ import { parseSearchString } from "./box-ui/util";
 const native = require("@weex-module/test");
 import Touchable from "rax-touchable";
 
-// 将 item 定义成组件
+// TODO: 将 item 定义成组件
 class ListViewDemo extends Component {
   constructor(props) {
     super(props);
@@ -48,12 +48,15 @@ class ListViewDemo extends Component {
     option.keywords = keywords || this.state.keywords;
     BookService.getBook(option).then(
       res => {
+        native.reportInsightApiEvent("searchLib", "success", "null");
         let data = res.result;
         this.setState({ data });
         native.changeLoadingStatus(true);
       },
       err => {
-        throw err;
+        native.reportInsightApiEvent("searchLib", "error", JSON.stringify(err));
+        alert("服务端错误");
+        native.back();
       }
     );
   }
