@@ -1,5 +1,5 @@
 // {"framework" : "Rax"}
-/*! com.muxistudio.lib, version 2.0.0-beta1, built time: Tue Aug 14 2018 20:12:14 GMT+0800 (CST) */
+/*! com.muxistudio.lib, version 2.0.0-rc1, built time: Sat Oct 06 2018 11:17:44 GMT+0800 (China Standard Time) */
 define("com.muxistudio.lib.search.detail", function(e) {
   !(function(e) {
     function t(r) {
@@ -36,7 +36,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         return Object.prototype.hasOwnProperty.call(e, t);
       }),
       (t.p = "/"),
-      t((t.s = 79));
+      t((t.s = 81));
   })([
     function(e, t, n) {
       "use strict";
@@ -60,33 +60,33 @@ define("com.muxistudio.lib.search.detail", function(e) {
       }
       Object.defineProperty(t, "__esModule", { value: !0 }),
         (t.createContext = t.Children = t.version = t.setNativeProps = t.findComponentInstance = t.unmountComponentAtNode = t.findDOMNode = t.createPortal = t.hydrate = t.render = t.PropTypes = t.PureComponent = t.Component = t.createFactory = t.isValidElement = t.cloneElement = t.createElement = void 0),
-        n(37);
+        n(40);
       var o = n(7),
-        i = n(4),
+        i = n(5),
         u = r(i),
-        l = n(41),
+        l = n(44),
         a = r(l),
         s = n(16),
         f = r(s),
         c = n(8),
         d = r(c),
-        p = n(39),
+        p = n(42),
         h = r(p),
-        y = n(36),
+        y = n(39),
         v = r(y),
         m = n(14),
         _ = r(m),
         b = n(9),
         g = r(b),
-        x = n(38),
-        C = r(x),
-        w = n(42),
-        O = r(w),
-        E = n(51),
+        x = n(41),
+        w = r(x),
+        C = n(45),
+        O = r(C),
+        E = n(54),
         P = r(E),
-        j = n(34),
+        j = n(37),
         S = r(j),
-        k = n(35),
+        k = n(38),
         N = r(k);
       (t.createElement = o.createElement),
         (t.cloneElement = o.cloneElement),
@@ -100,7 +100,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         (t.createPortal = v.default),
         (t.findDOMNode = _.default),
         (t.unmountComponentAtNode = g.default),
-        (t.findComponentInstance = C.default),
+        (t.findComponentInstance = w.default),
         (t.setNativeProps = O.default),
         (t.version = P.default),
         (t.Children = S.default),
@@ -150,7 +150,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         f = r(s),
         c = n(10),
         d = r(c),
-        p = n(46),
+        p = n(49),
         h = r(p),
         y = "$$instance";
       (t.default = {
@@ -203,56 +203,6 @@ define("com.muxistudio.lib.search.detail", function(e) {
         }
       }),
         (e.exports = t.default);
-    },
-    function(e, t, n) {
-      "use strict";
-      function r(e, t) {
-        if (!(e instanceof t))
-          throw new TypeError("Cannot call a class as a function");
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 });
-      var o = (function() {
-          function e(e, t) {
-            for (var n = 0; n < t.length; n++) {
-              var r = t[n];
-              (r.enumerable = r.enumerable || !1),
-                (r.configurable = !0),
-                "value" in r && (r.writable = !0),
-                Object.defineProperty(e, r.key, r);
-            }
-          }
-          return function(t, n, r) {
-            return n && e(t.prototype, n), r && e(t, r), t;
-          };
-        })(),
-        i = (function() {
-          function e(t, n, o) {
-            r(this, e),
-              (this.props = t),
-              (this.context = n),
-              (this.refs = {}),
-              (this.updater = o);
-          }
-          return (
-            o(e, [
-              { key: "isComponentClass", value: function() {} },
-              {
-                key: "setState",
-                value: function(e, t) {
-                  this.updater.setState(this, e, t);
-                }
-              },
-              {
-                key: "forceUpdate",
-                value: function(e) {
-                  this.updater.forceUpdate(this, e);
-                }
-              }
-            ]),
-            e
-          );
-        })();
-      (t.default = i), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -352,6 +302,56 @@ define("com.muxistudio.lib.search.detail", function(e) {
         }
       };
       (t.default = f), (e.exports = t.default);
+    },
+    function(e, t, n) {
+      "use strict";
+      function r(e, t) {
+        if (!(e instanceof t))
+          throw new TypeError("Cannot call a class as a function");
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 });
+      var o = (function() {
+          function e(e, t) {
+            for (var n = 0; n < t.length; n++) {
+              var r = t[n];
+              (r.enumerable = r.enumerable || !1),
+                (r.configurable = !0),
+                "value" in r && (r.writable = !0),
+                Object.defineProperty(e, r.key, r);
+            }
+          }
+          return function(t, n, r) {
+            return n && e(t.prototype, n), r && e(t, r), t;
+          };
+        })(),
+        i = (function() {
+          function e(t, n, o) {
+            r(this, e),
+              (this.props = t),
+              (this.context = n),
+              (this.refs = {}),
+              (this.updater = o);
+          }
+          return (
+            o(e, [
+              { key: "isComponentClass", value: function() {} },
+              {
+                key: "setState",
+                value: function(e, t) {
+                  this.updater.setState(this, e, t);
+                }
+              },
+              {
+                key: "forceUpdate",
+                value: function(e) {
+                  this.updater.forceUpdate(this, e);
+                }
+              }
+            ]),
+            e
+          );
+        })();
+      (t.default = i), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -558,7 +558,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         return r && r.call(i), i;
       }
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var i = n(40),
+      var i = n(43),
         u = r(i),
         l = n(3),
         a = r(l),
@@ -609,26 +609,6 @@ define("com.muxistudio.lib.search.detail", function(e) {
                 : typeof e;
             };
       (t.default = r), (e.exports = t.default);
-    },
-    function(e, t, n) {
-      "use strict";
-      function r(e, t) {
-        return (
-          (e.style = e.style || {}),
-          t.forEach(function(t) {
-            e[t] && !e.style[t] && ((e.style[t] = e[t]), delete e[t]);
-          }),
-          e
-        );
-      }
-      function o(e, t, n) {
-        return e[t] && !e[n] && ((e[n] = e[t]), delete e[t]), e;
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 }),
-        (t.transformPropsAttrsToStyle = r),
-        (t.renamePropsAttr = o),
-        (t.default = e.exports),
-        (t.default = e.exports);
     },
     function(e, t, n) {
       "use strict";
@@ -834,6 +814,26 @@ define("com.muxistudio.lib.search.detail", function(e) {
         richtext: { marginTop: 0, marginBottom: 0 }
       };
       (t.default = p), (e.exports = t.default);
+    },
+    function(e, t, n) {
+      "use strict";
+      function r(e, t) {
+        return (
+          (e.style = e.style || {}),
+          t.forEach(function(t) {
+            e[t] && !e.style[t] && ((e.style[t] = e[t]), delete e[t]);
+          }),
+          e
+        );
+      }
+      function o(e, t, n) {
+        return e[t] && !e[n] && ((e[n] = e[t]), delete e[t]), e;
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        (t.transformPropsAttrsToStyle = r),
+        (t.renamePropsAttr = o),
+        (t.default = e.exports),
+        (t.default = e.exports);
     },
     function(e, t, n) {
       "use strict";
@@ -1472,6 +1472,130 @@ define("com.muxistudio.lib.search.detail", function(e) {
     },
     function(e, t, n) {
       "use strict";
+      function r(e) {
+        var t = { method: e.method, url: e.url };
+        return (
+          "POST" === e.method &&
+            ((t.headers = { "Content-Type": "application/json" }),
+            (t.body = e.body)),
+          e.headers && (t.headers = e.headers),
+          Promise.race([
+            new Promise(function(e, n) {
+              o.fetch(t, function(t) {
+                t.ok ? e(JSON.parse(t.data)) : n(t);
+              });
+            }),
+            new Promise(function(e, t) {
+              setTimeout(function() {
+                t("请求超时");
+              }, 5e3);
+            })
+          ])
+        );
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 });
+      var o = n(55);
+      (t.default = r), (e.exports = t.default);
+    },
+    function(e, t, n) {
+      "use strict";
+      function r(e, t) {
+        if (!(e instanceof t))
+          throw new TypeError("Cannot call a class as a function");
+      }
+      function o(e, t) {
+        if (!e)
+          throw new ReferenceError(
+            "this hasn't been initialised - super() hasn't been called"
+          );
+        return !t || ("object" != typeof t && "function" != typeof t) ? e : t;
+      }
+      function i(e, t) {
+        if ("function" != typeof t && null !== t)
+          throw new TypeError(
+            "Super expression must either be null or a function, not " +
+              typeof t
+          );
+        (e.prototype = Object.create(t && t.prototype, {
+          constructor: {
+            value: e,
+            enumerable: !1,
+            writable: !0,
+            configurable: !0
+          }
+        })),
+          t &&
+            (Object.setPrototypeOf
+              ? Object.setPrototypeOf(e, t)
+              : (e.__proto__ = t));
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 });
+      var u =
+          Object.assign ||
+          function(e) {
+            for (var t = 1; t < arguments.length; t++) {
+              var n = arguments[t];
+              for (var r in n)
+                Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
+            }
+            return e;
+          },
+        l = (function() {
+          function e(e, t) {
+            for (var n = 0; n < t.length; n++) {
+              var r = t[n];
+              (r.enumerable = r.enumerable || !1),
+                (r.configurable = !0),
+                "value" in r && (r.writable = !0),
+                Object.defineProperty(e, r.key, r);
+            }
+          }
+          return function(t, n, r) {
+            return n && e(t.prototype, n), r && e(t, r), t;
+          };
+        })(),
+        a = n(1),
+        s = (n(2), n(4)),
+        f = (function(e) {
+          return e && e.__esModule ? e : { default: e };
+        })(s),
+        c = (function(e) {
+          function t() {
+            return (
+              r(this, t),
+              o(
+                this,
+                (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments)
+              )
+            );
+          }
+          return (
+            i(t, e),
+            l(t, [
+              {
+                key: "render",
+                value: function() {
+                  var e = this.props,
+                    t = u({}, e, {
+                      style: u({}, d.initial, e.style),
+                      onClick: e.onPress
+                    });
+                  return delete t.onPress, (0, a.createElement)(f.default, t);
+                }
+              }
+            ]),
+            t
+          );
+        })(a.Component);
+      c.propTypes = {};
+      var d = { initial: { cursor: "pointer" } };
+      (t.default = c), (e.exports = t.default);
+    },
+    function(t, n) {
+      t.exports = e("@weex-module/test");
+    },
+    function(e, t, n) {
+      "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
       var r = {
           stretch: "stretch",
@@ -1575,7 +1699,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
       var r = n(20),
-        o = n(21),
+        o = n(24),
         i = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(o),
@@ -1804,7 +1928,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
     function(e, t, n) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var r = n(11);
+      var r = n(12);
       (t.default = {
         parse: function(e) {
           var t = e.props;
@@ -1826,21 +1950,21 @@ define("com.muxistudio.lib.search.detail", function(e) {
         return e && e.__esModule ? e : { default: e };
       }
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var o = n(26),
+      var o = n(29),
         i = r(o),
-        u = n(31),
+        u = n(34),
         l = r(u),
-        a = n(30),
+        a = n(33),
         s = r(a),
-        f = n(29),
+        f = n(32),
         c = r(f),
-        d = n(28),
+        d = n(31),
         p = r(d),
-        h = n(24),
+        h = n(27),
         y = r(h),
-        v = n(25),
+        v = n(28),
         m = r(v),
-        _ = n(23),
+        _ = n(26),
         b = r(_);
       (t.default = {
         span: c.default,
@@ -1985,7 +2109,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
     function(e, t, n) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var r = n(11);
+      var r = n(12);
       (t.default = {
         parse: function(e) {
           var t = e.props;
@@ -2017,7 +2141,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                   : typeof e;
               },
         o = n(20),
-        i = n(27),
+        i = n(30),
         u = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(i),
@@ -2155,100 +2279,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         };
       (t.default = c), (e.exports = t.default);
     },
-    function(e, t, n) {
-      "use strict";
-      function r(e, t) {
-        if (!(e instanceof t))
-          throw new TypeError("Cannot call a class as a function");
-      }
-      function o(e, t) {
-        if (!e)
-          throw new ReferenceError(
-            "this hasn't been initialised - super() hasn't been called"
-          );
-        return !t || ("object" != typeof t && "function" != typeof t) ? e : t;
-      }
-      function i(e, t) {
-        if ("function" != typeof t && null !== t)
-          throw new TypeError(
-            "Super expression must either be null or a function, not " +
-              typeof t
-          );
-        (e.prototype = Object.create(t && t.prototype, {
-          constructor: {
-            value: e,
-            enumerable: !1,
-            writable: !0,
-            configurable: !0
-          }
-        })),
-          t &&
-            (Object.setPrototypeOf
-              ? Object.setPrototypeOf(e, t)
-              : (e.__proto__ = t));
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 });
-      var u =
-          Object.assign ||
-          function(e) {
-            for (var t = 1; t < arguments.length; t++) {
-              var n = arguments[t];
-              for (var r in n)
-                Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
-            }
-            return e;
-          },
-        l = (function() {
-          function e(e, t) {
-            for (var n = 0; n < t.length; n++) {
-              var r = t[n];
-              (r.enumerable = r.enumerable || !1),
-                (r.configurable = !0),
-                "value" in r && (r.writable = !0),
-                Object.defineProperty(e, r.key, r);
-            }
-          }
-          return function(t, n, r) {
-            return n && e(t.prototype, n), r && e(t, r), t;
-          };
-        })(),
-        a = n(1),
-        s = (n(2), n(5)),
-        f = (function(e) {
-          return e && e.__esModule ? e : { default: e };
-        })(s),
-        c = (function(e) {
-          function t() {
-            return (
-              r(this, t),
-              o(
-                this,
-                (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments)
-              )
-            );
-          }
-          return (
-            i(t, e),
-            l(t, [
-              {
-                key: "render",
-                value: function() {
-                  var e = this.props,
-                    t = u({}, e, {
-                      style: u({}, d.initial, e.style),
-                      onClick: e.onPress
-                    });
-                  return delete t.onPress, (0, a.createElement)(f.default, t);
-                }
-              }
-            ]),
-            t
-          );
-        })(a.Component);
-      c.propTypes = {};
-      var d = { initial: { cursor: "pointer" } };
-      (t.default = c), (e.exports = t.default);
-    },
+    ,
     function(e, t, n) {
       "use strict";
       function r(e) {
@@ -2467,7 +2498,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         };
       })();
       t.default = a;
-      var f = n(4),
+      var f = n(5),
         c = r(f),
         d = n(16),
         p = r(d),
@@ -2561,7 +2592,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         };
       })();
       t.default = l;
-      var s = n(4),
+      var s = n(5),
         f = r(s),
         c = n(8),
         d = r(c),
@@ -2687,7 +2718,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
           (l.default.TextComponent = p.default),
           (l.default.FragmentComponent = m.default),
           (l.default.CompositeComponent = y.default),
-          (l.default.hook = n || w.default),
+          (l.default.hook = n || C.default),
           (l.default.measurer = r),
           !l.default.driver)
         ) {
@@ -2713,22 +2744,22 @@ define("com.muxistudio.lib.search.detail", function(e) {
       var i = n(2),
         u = n(0),
         l = r(u),
-        a = n(44),
+        a = n(47),
         s = r(a),
         f = n(18),
         c = r(f),
-        d = n(49),
+        d = n(52),
         p = r(d),
-        h = n(43),
+        h = n(46),
         y = r(h),
-        v = n(45),
+        v = n(48),
         m = r(v),
-        _ = n(32),
+        _ = n(35),
         b = r(_),
-        g = n(22),
+        g = n(25),
         x = r(g),
-        C = n(13),
-        w = r(C);
+        w = n(13),
+        C = r(w);
       e.exports = t.default;
     },
     function(e, t, n) {
@@ -2778,7 +2809,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
             return n && e(t.prototype, n), r && e(t, r), t;
           };
         })(),
-        l = n(4),
+        l = n(5),
         a = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(l),
@@ -2863,9 +2894,9 @@ define("com.muxistudio.lib.search.detail", function(e) {
             return n && e(t.prototype, n), r && e(t, r), t;
           };
         })(),
-        a = n(48),
+        a = n(51),
         s = r(a),
-        f = n(50),
+        f = n(53),
         c = r(f),
         d = n(0),
         p = r(d),
@@ -2875,9 +2906,9 @@ define("com.muxistudio.lib.search.detail", function(e) {
         m = r(v),
         _ = n(10),
         b = r(_),
-        g = n(47),
+        g = n(50),
         x = r(g),
-        C = (function() {
+        w = (function() {
           function e(t) {
             o(this, e), (this._currentElement = t);
           }
@@ -3180,7 +3211,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
             e
           );
         })();
-      (t.default = C), (e.exports = t.default);
+      (t.default = w), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -3466,7 +3497,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
             return n && e(t.prototype, n), r && e(t, r), t;
           };
         })(),
-        l = n(4),
+        l = n(5),
         a = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(l),
@@ -3745,29 +3776,8 @@ define("com.muxistudio.lib.search.detail", function(e) {
         (e.exports = t.default);
     },
     function(t, n) {
-      t.exports = e("@weex-module/test");
+      t.exports = e("@weex-module/stream");
     },
-    function(e, t, n) {
-      "use strict";
-      function r(e) {
-        var t = { method: e.method, url: e.url };
-        return (
-          "POST" === e.method &&
-            ((t.headers = { "Content-Type": "application/json" }),
-            (t.body = e.body)),
-          e.headers && (t.headers = e.headers),
-          new Promise(function(e, n) {
-            o.fetch(t, function(t) {
-              t.ok ? e(JSON.parse(t.data)) : n(t);
-            });
-          })
-        );
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 });
-      var o = n(69);
-      (t.default = r), (e.exports = t.default);
-    },
-    ,
     ,
     function(e, t, n) {
       "use strict";
@@ -3864,7 +3874,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
     function(e, t, n) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var r = n(53),
+      var r = n(21),
         o = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(r),
@@ -3891,6 +3901,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         };
       (t.default = i), (e.exports = t.default);
     },
+    ,
     ,
     ,
     ,
@@ -3939,7 +3950,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         })(),
         u = o(["&"], ["&"]),
         l = o(["="], ["="]),
-        a = n(53);
+        a = n(21);
       Object.defineProperty(t, "request", {
         enumerable: !0,
         get: function() {
@@ -4043,11 +4054,11 @@ define("com.muxistudio.lib.search.detail", function(e) {
         })(),
         f = n(1),
         c = n(2),
-        d = n(5),
+        d = n(4),
         p = r(d),
-        h = n(56),
+        h = n(57),
         y = r(h),
-        v = n(65),
+        v = n(67),
         m = r(v),
         _ = 750,
         b = (function(e) {
@@ -4205,14 +4216,14 @@ define("com.muxistudio.lib.search.detail", function(e) {
                     x = this.props.horizontal
                       ? g.baseHorizontal
                       : g.baseVertical,
-                    C = a({}, x, this.props.style),
-                    w = this.props.horizontal ? r : o;
+                    w = a({}, x, this.props.style),
+                    C = this.props.horizontal ? r : o;
                   if (c.isWeex)
                     return (0, f.createElement)(
                       "scroller",
                       a({}, this.props, {
-                        style: C,
-                        showScrollbar: w,
+                        style: w,
+                        showScrollbar: C,
                         onLoadmore: i,
                         onScroll: s ? this.handleScroll : null,
                         loadmoreoffset: u,
@@ -4227,7 +4238,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                   var O = this.handleScroll;
                   if (
                     (n && (O = l(O, n)),
-                    !w &&
+                    !C &&
                       "undefined" != typeof document &&
                       !document.getElementById("rax-scrollview-style"))
                   ) {
@@ -4239,11 +4250,11 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         this.props.className +
                         "::-webkit-scrollbar{display: none;}");
                   }
-                  (C.webkitOverflowScrolling = "touch"),
-                    (C.overflow = "scroll");
+                  (w.webkitOverflowScrolling = "touch"),
+                    (w.overflow = "scroll");
                   var P = a({}, this.props, {
                     ref: "scroller",
-                    style: C,
+                    style: w,
                     onScroll: O
                   });
                   return (
@@ -4433,15 +4444,13 @@ define("com.muxistudio.lib.search.detail", function(e) {
     ,
     ,
     ,
-    function(t, n) {
-      t.exports = e("@weex-module/stream");
-    },
+    ,
     ,
     ,
     function(e, t, n) {
       "use strict";
       var r = n(1),
-        o = n(73),
+        o = n(75),
         i = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(o);
@@ -4498,20 +4507,20 @@ define("com.muxistudio.lib.search.detail", function(e) {
           };
         })(),
         a = n(1),
-        s = n(5),
+        s = n(4),
         f = r(s),
-        c = n(64),
+        c = n(66),
         d = r(c),
-        p = n(12),
+        p = n(11),
         h = r(p),
-        y = n(33),
+        y = n(22),
         v = r(y),
-        m = n(57),
+        m = n(58),
         _ = r(m),
-        b = n(61),
-        g = n(52),
+        b = n(63),
+        g = n(23),
         x = { bid: "", book: "", author: "", intro: "", books: [] },
-        C = (function(e) {
+        w = (function(e) {
           function t(e) {
             o(this, t);
             var n = i(
@@ -4529,7 +4538,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                       null,
                       (0, a.createElement)(
                         h.default,
-                        { style: w.details },
+                        { style: C.details },
                         "无"
                       )
                     )
@@ -4539,7 +4548,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         null,
                         (0, a.createElement)(
                           h.default,
-                          { style: [w.details, w.intro_text] },
+                          { style: [C.details, C.intro_text] },
                           n.state.displayFullIntro
                             ? n.state.info.intro
                             : n.state.info.intro.slice(0, 100)
@@ -4549,7 +4558,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                           { onPress: n.toggleIntro },
                           (0, a.createElement)(
                             h.default,
-                            { style: w.more },
+                            { style: C.more },
                             n.state.displayFullIntro ? "收起" : "更多"
                           )
                         )
@@ -4559,7 +4568,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         null,
                         (0, a.createElement)(
                           h.default,
-                          { style: w.details },
+                          { style: C.details },
                           n.state.info.intro
                         )
                       );
@@ -4613,39 +4622,39 @@ define("com.muxistudio.lib.search.detail", function(e) {
                     (e = t.length
                       ? (0, a.createElement)(
                           f.default,
-                          { style: w.statusTab },
+                          { style: C.statusTab },
                           (0, a.createElement)(
                             f.default,
-                            { style: w.tr },
+                            { style: C.tr },
                             (0, a.createElement)(
                               h.default,
-                              { style: [w.th, w.tr_id] },
+                              { style: [C.th, C.tr_id] },
                               "索书号"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: [w.th, w.tr_address] },
+                              { style: [C.th, C.tr_address] },
                               "馆藏地址"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: [w.th, w.tr_status] },
+                              { style: [C.th, C.tr_status] },
                               "书刊状态"
                             )
                           ),
                           t.map(function(e) {
                             return (0,
-                            a.createElement)(f.default, { style: w.tr }, (0, a.createElement)(f.default, { style: w.td }, (0, a.createElement)(h.default, { style: w.td_text }, e.tid)), (0, a.createElement)(f.default, { style: w.td }, (0, a.createElement)(h.default, { style: w.td_text }, e.room)), (0, a.createElement)(f.default, { style: w.td }, (0, a.createElement)(h.default, { style: [w.td_text, "可借" === e.status ? w.td_text_highlight : {}] }, e.status + ("借出" === e.status ? "-应还日期" + (0, a.createElement)("br", null) + e.date : ""))));
+                            a.createElement)(f.default, { style: C.tr }, (0, a.createElement)(f.default, { style: C.td }, (0, a.createElement)(h.default, { style: C.td_text }, e.tid)), (0, a.createElement)(f.default, { style: C.td }, (0, a.createElement)(h.default, { style: C.td_text }, e.room)), (0, a.createElement)(f.default, { style: C.td }, (0, a.createElement)(h.default, { style: [C.td_text, "可借" === e.status ? C.td_text_highlight : {}] }, e.status + ("借出" === e.status ? "-应还日期" + (0, a.createElement)("br", null) + e.date : ""))));
                           })
                         )
                       : (0, a.createElement)(
                           h.default,
-                          { style: w.emptyTip },
+                          { style: C.emptyTip },
                           this.state.info.bid
                         )),
                     (0, a.createElement)(
                       f.default,
-                      { style: w.App },
+                      { style: C.App },
                       (0, a.createElement)(
                         d.default,
                         {
@@ -4659,19 +4668,19 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         },
                         (0, a.createElement)(
                           f.default,
-                          { style: w.detail_containner },
+                          { style: C.detail_containner },
                           (0, a.createElement)(
                             f.default,
-                            { style: w.title },
+                            { style: C.title },
                             (0, a.createElement)(
                               h.default,
-                              { style: w.static_title },
+                              { style: C.static_title },
                               " ",
                               "题名/责任人"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: w.details },
+                              { style: C.details },
                               this.state.info.book,
                               " ",
                               this.state.info.author
@@ -4679,27 +4688,27 @@ define("com.muxistudio.lib.search.detail", function(e) {
                           ),
                           (0, a.createElement)(
                             f.default,
-                            { style: w.publisher },
+                            { style: C.publisher },
                             (0, a.createElement)(
                               h.default,
-                              { style: w.static_title },
+                              { style: C.static_title },
                               "出版发行项"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: w.details },
+                              { style: C.details },
                               this.state.publisher || "无"
                             )
                           ),
-                          (0, a.createElement)(f.default, { style: w.content }),
+                          (0, a.createElement)(f.default, { style: C.content }),
                           (0, a.createElement)(
                             h.default,
-                            { style: w.static_title },
+                            { style: C.static_title },
                             "内容简介"
                           ),
                           (0, a.createElement)(
                             f.default,
-                            { style: w.details },
+                            { style: C.details },
                             this.renderIntro()
                           )
                         ),
@@ -4713,7 +4722,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
             t
           );
         })(a.Component),
-        w = {
+        C = {
           App: {
             backgroundColor: "rgb(239,239,244)",
             flex: 1,
@@ -4779,7 +4788,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
           td_text: { color: "#434343", textAlign: "left", fontSize: 20 },
           td_text_highlight: { color: "#feb75a" }
         };
-      (t.default = C), (e.exports = t.default);
+      (t.default = w), (e.exports = t.default);
     },
     ,
     ,
@@ -4787,7 +4796,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
     ,
     ,
     function(e, t, n) {
-      e.exports = n(72);
+      e.exports = n(74);
     }
   ]);
 }),

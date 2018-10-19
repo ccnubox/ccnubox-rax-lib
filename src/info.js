@@ -1,4 +1,3 @@
-// demo
 import { createElement, Component, render } from "rax";
 import View from "rax-view";
 import ScrollView from "rax-scrollview";
@@ -8,11 +7,10 @@ import Touchable from "rax-touchable";
 import BookService from "../services/Books";
 import { parseSearchString } from "./box-ui/util";
 
-// 将 item 定义成组件
 const TITLE_NAME = "题名/责任人";
 const PUBLISHER = "出版发行项";
 const CONTENT = "内容简介";
-const MORE_LINK = "更多";
+// const MORE_LINK = "更多";
 
 let initialInfo = {
   bid: "",
@@ -53,12 +51,19 @@ class ListViewDemo extends Component {
     option.id = id || this.state.id;
     BookService.getSingeBookInfo(option).then(
       res => {
+        native.reportInsightApiEvent("getBookInfo", "success", "null");
         let info = res;
         this.setState({ info });
         native.changeLoadingStatus(true);
       },
       err => {
-        throw err;
+        native.changeLoadingStatus(true);
+        native.reportInsightApiEvent(
+          "getBookInfo",
+          "error",
+          JSON.stringify(err)
+        );
+        alert("请求图书详情失败！");
       }
     );
   }

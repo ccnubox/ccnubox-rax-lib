@@ -6,6 +6,7 @@ import ListView from "rax-listview";
 import Image from "rax-image";
 import BookService from "../services/Books";
 import icon from "./assets/book_icon.png";
+import emptyIcon from "./assets/blank3X.png";
 import { parseSearchString } from "./box-ui/util";
 const native = require("@weex-module/test");
 import Touchable from "rax-touchable";
@@ -15,6 +16,7 @@ class ListViewDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: [],
       keywords: "",
       page: 1,
       noMore: false
@@ -138,20 +140,39 @@ class ListViewDemo extends Component {
   };
 
   render() {
+    const isEmpty = this.state.data.length === 0;
     return (
-      <View style={styles.App}>
-        <ListView
-          renderFooter={this.listLoading}
-          renderRow={this.listItem}
-          dataSource={this.state.data}
-          onEndReached={this.handleLoadMore}
-        />
+      <View style={[styles.App, isEmpty ? styles.center : {}]}>
+        {isEmpty ? (
+          <View style={styles.empty}>
+            <Image source={emptyIcon} style={styles.emptyIcon} />
+            <Text style={styles.emptyText}>未搜索到相关图书，换个姿势？</Text>
+          </View>
+        ) : (
+          <ListView
+            renderFooter={this.listLoading}
+            renderRow={this.listItem}
+            dataSource={this.state.data}
+            onEndReached={this.handleLoadMore}
+          />
+        )}
       </View>
     );
   }
 }
 
 const styles = {
+  empty: {
+    marginTop: 154,
+    alignItems: "center"
+  },
+  center: {
+    alignItems: "center"
+  },
+  emptyText: {
+    fontSize: 30,
+    color: "#ccccff"
+  },
   App: {
     backgroundColor: "#efeff4",
     flex: 1,

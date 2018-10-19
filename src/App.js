@@ -30,6 +30,7 @@ class App extends Component {
       alert("请输入关键词！");
     } else {
       native.push(`ccnubox://lib.search.result?keyword=${this.state.text}`);
+      this.setState({ text: "" });
     }
   };
   render() {
@@ -42,6 +43,7 @@ class App extends Component {
           resizeMode="contain"
         />
         <BoxInput
+          value={this.state.text}
           style={styles.searchInput}
           onChange={event => this.updateText(event.nativeEvent.text)}
           onInput={event => this.updateText(event.nativeEvent.text)}

@@ -1,5 +1,5 @@
 // {"framework" : "Rax"}
-/*! com.muxistudio.lib, version 2.0.0-beta1, built time: Tue Aug 14 2018 20:12:14 GMT+0800 (CST) */
+/*! com.muxistudio.lib, version 2.0.0-rc1, built time: Sat Oct 06 2018 11:17:44 GMT+0800 (China Standard Time) */
 define("com.muxistudio.lib.search.result", function(e) {
   !(function(e) {
     function t(r) {
@@ -36,7 +36,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         return Object.prototype.hasOwnProperty.call(e, t);
       }),
       (t.p = "/"),
-      t((t.s = 78));
+      t((t.s = 80));
   })([
     function(e, t, n) {
       "use strict";
@@ -60,33 +60,33 @@ define("com.muxistudio.lib.search.result", function(e) {
       }
       Object.defineProperty(t, "__esModule", { value: !0 }),
         (t.createContext = t.Children = t.version = t.setNativeProps = t.findComponentInstance = t.unmountComponentAtNode = t.findDOMNode = t.createPortal = t.hydrate = t.render = t.PropTypes = t.PureComponent = t.Component = t.createFactory = t.isValidElement = t.cloneElement = t.createElement = void 0),
-        n(37);
+        n(40);
       var o = n(7),
-        i = n(4),
+        i = n(5),
         u = r(i),
-        l = n(41),
+        l = n(44),
         a = r(l),
         s = n(16),
         c = r(s),
         f = n(8),
         d = r(f),
-        p = n(39),
+        p = n(42),
         h = r(p),
-        y = n(36),
+        y = n(39),
         v = r(y),
         m = n(14),
         b = r(m),
         _ = n(9),
         g = r(_),
-        w = n(38),
+        w = n(41),
         x = r(w),
-        C = n(42),
+        C = n(45),
         O = r(C),
-        A = n(51),
+        A = n(54),
         E = r(A),
-        P = n(34),
+        P = n(37),
         j = r(P),
-        k = n(35),
+        k = n(38),
         S = r(k);
       (t.createElement = o.createElement),
         (t.cloneElement = o.cloneElement),
@@ -150,7 +150,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         c = r(s),
         f = n(10),
         d = r(f),
-        p = n(46),
+        p = n(49),
         h = r(p),
         y = "$$instance";
       (t.default = {
@@ -203,56 +203,6 @@ define("com.muxistudio.lib.search.result", function(e) {
         }
       }),
         (e.exports = t.default);
-    },
-    function(e, t, n) {
-      "use strict";
-      function r(e, t) {
-        if (!(e instanceof t))
-          throw new TypeError("Cannot call a class as a function");
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 });
-      var o = (function() {
-          function e(e, t) {
-            for (var n = 0; n < t.length; n++) {
-              var r = t[n];
-              (r.enumerable = r.enumerable || !1),
-                (r.configurable = !0),
-                "value" in r && (r.writable = !0),
-                Object.defineProperty(e, r.key, r);
-            }
-          }
-          return function(t, n, r) {
-            return n && e(t.prototype, n), r && e(t, r), t;
-          };
-        })(),
-        i = (function() {
-          function e(t, n, o) {
-            r(this, e),
-              (this.props = t),
-              (this.context = n),
-              (this.refs = {}),
-              (this.updater = o);
-          }
-          return (
-            o(e, [
-              { key: "isComponentClass", value: function() {} },
-              {
-                key: "setState",
-                value: function(e, t) {
-                  this.updater.setState(this, e, t);
-                }
-              },
-              {
-                key: "forceUpdate",
-                value: function(e) {
-                  this.updater.forceUpdate(this, e);
-                }
-              }
-            ]),
-            e
-          );
-        })();
-      (t.default = i), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -352,6 +302,56 @@ define("com.muxistudio.lib.search.result", function(e) {
         }
       };
       (t.default = c), (e.exports = t.default);
+    },
+    function(e, t, n) {
+      "use strict";
+      function r(e, t) {
+        if (!(e instanceof t))
+          throw new TypeError("Cannot call a class as a function");
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 });
+      var o = (function() {
+          function e(e, t) {
+            for (var n = 0; n < t.length; n++) {
+              var r = t[n];
+              (r.enumerable = r.enumerable || !1),
+                (r.configurable = !0),
+                "value" in r && (r.writable = !0),
+                Object.defineProperty(e, r.key, r);
+            }
+          }
+          return function(t, n, r) {
+            return n && e(t.prototype, n), r && e(t, r), t;
+          };
+        })(),
+        i = (function() {
+          function e(t, n, o) {
+            r(this, e),
+              (this.props = t),
+              (this.context = n),
+              (this.refs = {}),
+              (this.updater = o);
+          }
+          return (
+            o(e, [
+              { key: "isComponentClass", value: function() {} },
+              {
+                key: "setState",
+                value: function(e, t) {
+                  this.updater.setState(this, e, t);
+                }
+              },
+              {
+                key: "forceUpdate",
+                value: function(e) {
+                  this.updater.forceUpdate(this, e);
+                }
+              }
+            ]),
+            e
+          );
+        })();
+      (t.default = i), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -558,7 +558,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         return r && r.call(i), i;
       }
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var i = n(40),
+      var i = n(43),
         u = r(i),
         l = n(3),
         a = r(l),
@@ -609,26 +609,6 @@ define("com.muxistudio.lib.search.result", function(e) {
                 : typeof e;
             };
       (t.default = r), (e.exports = t.default);
-    },
-    function(e, t, n) {
-      "use strict";
-      function r(e, t) {
-        return (
-          (e.style = e.style || {}),
-          t.forEach(function(t) {
-            e[t] && !e.style[t] && ((e.style[t] = e[t]), delete e[t]);
-          }),
-          e
-        );
-      }
-      function o(e, t, n) {
-        return e[t] && !e[n] && ((e[n] = e[t]), delete e[t]), e;
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 }),
-        (t.transformPropsAttrsToStyle = r),
-        (t.renamePropsAttr = o),
-        (t.default = e.exports),
-        (t.default = e.exports);
     },
     function(e, t, n) {
       "use strict";
@@ -834,6 +814,26 @@ define("com.muxistudio.lib.search.result", function(e) {
         richtext: { marginTop: 0, marginBottom: 0 }
       };
       (t.default = p), (e.exports = t.default);
+    },
+    function(e, t, n) {
+      "use strict";
+      function r(e, t) {
+        return (
+          (e.style = e.style || {}),
+          t.forEach(function(t) {
+            e[t] && !e.style[t] && ((e.style[t] = e[t]), delete e[t]);
+          }),
+          e
+        );
+      }
+      function o(e, t, n) {
+        return e[t] && !e[n] && ((e[n] = e[t]), delete e[t]), e;
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        (t.transformPropsAttrsToStyle = r),
+        (t.renamePropsAttr = o),
+        (t.default = e.exports),
+        (t.default = e.exports);
     },
     function(e, t, n) {
       "use strict";
@@ -1472,6 +1472,130 @@ define("com.muxistudio.lib.search.result", function(e) {
     },
     function(e, t, n) {
       "use strict";
+      function r(e) {
+        var t = { method: e.method, url: e.url };
+        return (
+          "POST" === e.method &&
+            ((t.headers = { "Content-Type": "application/json" }),
+            (t.body = e.body)),
+          e.headers && (t.headers = e.headers),
+          Promise.race([
+            new Promise(function(e, n) {
+              o.fetch(t, function(t) {
+                t.ok ? e(JSON.parse(t.data)) : n(t);
+              });
+            }),
+            new Promise(function(e, t) {
+              setTimeout(function() {
+                t("请求超时");
+              }, 5e3);
+            })
+          ])
+        );
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 });
+      var o = n(55);
+      (t.default = r), (e.exports = t.default);
+    },
+    function(e, t, n) {
+      "use strict";
+      function r(e, t) {
+        if (!(e instanceof t))
+          throw new TypeError("Cannot call a class as a function");
+      }
+      function o(e, t) {
+        if (!e)
+          throw new ReferenceError(
+            "this hasn't been initialised - super() hasn't been called"
+          );
+        return !t || ("object" != typeof t && "function" != typeof t) ? e : t;
+      }
+      function i(e, t) {
+        if ("function" != typeof t && null !== t)
+          throw new TypeError(
+            "Super expression must either be null or a function, not " +
+              typeof t
+          );
+        (e.prototype = Object.create(t && t.prototype, {
+          constructor: {
+            value: e,
+            enumerable: !1,
+            writable: !0,
+            configurable: !0
+          }
+        })),
+          t &&
+            (Object.setPrototypeOf
+              ? Object.setPrototypeOf(e, t)
+              : (e.__proto__ = t));
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 });
+      var u =
+          Object.assign ||
+          function(e) {
+            for (var t = 1; t < arguments.length; t++) {
+              var n = arguments[t];
+              for (var r in n)
+                Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
+            }
+            return e;
+          },
+        l = (function() {
+          function e(e, t) {
+            for (var n = 0; n < t.length; n++) {
+              var r = t[n];
+              (r.enumerable = r.enumerable || !1),
+                (r.configurable = !0),
+                "value" in r && (r.writable = !0),
+                Object.defineProperty(e, r.key, r);
+            }
+          }
+          return function(t, n, r) {
+            return n && e(t.prototype, n), r && e(t, r), t;
+          };
+        })(),
+        a = n(1),
+        s = (n(2), n(4)),
+        c = (function(e) {
+          return e && e.__esModule ? e : { default: e };
+        })(s),
+        f = (function(e) {
+          function t() {
+            return (
+              r(this, t),
+              o(
+                this,
+                (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments)
+              )
+            );
+          }
+          return (
+            i(t, e),
+            l(t, [
+              {
+                key: "render",
+                value: function() {
+                  var e = this.props,
+                    t = u({}, e, {
+                      style: u({}, d.initial, e.style),
+                      onClick: e.onPress
+                    });
+                  return delete t.onPress, (0, a.createElement)(c.default, t);
+                }
+              }
+            ]),
+            t
+          );
+        })(a.Component);
+      f.propTypes = {};
+      var d = { initial: { cursor: "pointer" } };
+      (t.default = f), (e.exports = t.default);
+    },
+    function(t, n) {
+      t.exports = e("@weex-module/test");
+    },
+    function(e, t, n) {
+      "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
       var r = {
           stretch: "stretch",
@@ -1575,7 +1699,7 @@ define("com.muxistudio.lib.search.result", function(e) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
       var r = n(20),
-        o = n(21),
+        o = n(24),
         i = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(o),
@@ -1804,7 +1928,7 @@ define("com.muxistudio.lib.search.result", function(e) {
     function(e, t, n) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var r = n(11);
+      var r = n(12);
       (t.default = {
         parse: function(e) {
           var t = e.props;
@@ -1826,21 +1950,21 @@ define("com.muxistudio.lib.search.result", function(e) {
         return e && e.__esModule ? e : { default: e };
       }
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var o = n(26),
+      var o = n(29),
         i = r(o),
-        u = n(31),
+        u = n(34),
         l = r(u),
-        a = n(30),
+        a = n(33),
         s = r(a),
-        c = n(29),
+        c = n(32),
         f = r(c),
-        d = n(28),
+        d = n(31),
         p = r(d),
-        h = n(24),
+        h = n(27),
         y = r(h),
-        v = n(25),
+        v = n(28),
         m = r(v),
-        b = n(23),
+        b = n(26),
         _ = r(b);
       (t.default = {
         span: f.default,
@@ -1985,7 +2109,7 @@ define("com.muxistudio.lib.search.result", function(e) {
     function(e, t, n) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var r = n(11);
+      var r = n(12);
       (t.default = {
         parse: function(e) {
           var t = e.props;
@@ -2017,7 +2141,7 @@ define("com.muxistudio.lib.search.result", function(e) {
                   : typeof e;
               },
         o = n(20),
-        i = n(27),
+        i = n(30),
         u = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(i),
@@ -2213,11 +2337,12 @@ define("com.muxistudio.lib.search.result", function(e) {
           };
         })(),
         a = n(1),
-        s = (n(2), n(5)),
-        c = (function(e) {
-          return e && e.__esModule ? e : { default: e };
-        })(s),
+        s = n(2),
+        c = n(4),
         f = (function(e) {
+          return e && e.__esModule ? e : { default: e };
+        })(c),
+        d = (function(e) {
           function t() {
             return (
               r(this, t),
@@ -2233,21 +2358,69 @@ define("com.muxistudio.lib.search.result", function(e) {
               {
                 key: "render",
                 value: function() {
-                  var e = this.props,
-                    t = u({}, e, {
-                      style: u({}, d.initial, e.style),
-                      onClick: e.onPress
-                    });
-                  return delete t.onPress, (0, a.createElement)(c.default, t);
+                  var e = u({}, this.props),
+                    t = e.source;
+                  if (t && t.uri) {
+                    var n = e.style,
+                      r = t.width,
+                      o = t.height,
+                      i = t.uri;
+                    null == r &&
+                      null == o &&
+                      null == n.height &&
+                      null == n.width &&
+                      ((r = 0), (o = 0)),
+                      (e.style = u(
+                        u(
+                          {},
+                          !this.context.isInAParentText && { display: "flex" },
+                          { width: r, height: o }
+                        ),
+                        n
+                      )),
+                      (e.src = i),
+                      delete e.source;
+                    var l = void 0;
+                    l = s.isWeex ? "image" : "img";
+                    var c = e.resizeMode || e.style.resizeMode;
+                    return (
+                      c &&
+                        (s.isWeex
+                          ? ((e.resize = c), (e.style.resizeMode = c))
+                          : (e.style.objectFit = c)),
+                      this.props.children
+                        ? ((e.children = null),
+                          (0, a.createElement)(
+                            f.default,
+                            { style: e.style },
+                            (0, a.createElement)(l, e),
+                            (0, a.createElement)(
+                              f.default,
+                              { style: p.absoluteImage },
+                              this.props.children
+                            )
+                          ))
+                        : (0, a.createElement)(l, e)
+                    );
+                  }
+                  return null;
                 }
               }
             ]),
             t
           );
         })(a.Component);
-      f.propTypes = {};
-      var d = { initial: { cursor: "pointer" } };
-      (t.default = f), (e.exports = t.default);
+      (d.propTypes = {}),
+        (d.resizeMode = {
+          contain: "contain",
+          cover: "cover",
+          stretch: "stretch",
+          center: "center",
+          repeat: "repeat"
+        }),
+        (d.contextTypes = { isInAParentText: a.PropTypes.bool });
+      var p = { absoluteImage: { left: 0, top: 0, position: "absolute" } };
+      (t.default = d), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -2467,7 +2640,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         };
       })();
       t.default = a;
-      var c = n(4),
+      var c = n(5),
         f = r(c),
         d = n(16),
         p = r(d),
@@ -2561,7 +2734,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         };
       })();
       t.default = l;
-      var s = n(4),
+      var s = n(5),
         c = r(s),
         f = n(8),
         d = r(f),
@@ -2713,19 +2886,19 @@ define("com.muxistudio.lib.search.result", function(e) {
       var i = n(2),
         u = n(0),
         l = r(u),
-        a = n(44),
+        a = n(47),
         s = r(a),
         c = n(18),
         f = r(c),
-        d = n(49),
+        d = n(52),
         p = r(d),
-        h = n(43),
+        h = n(46),
         y = r(h),
-        v = n(45),
+        v = n(48),
         m = r(v),
-        b = n(32),
+        b = n(35),
         _ = r(b),
-        g = n(22),
+        g = n(25),
         w = r(g),
         x = n(13),
         C = r(x);
@@ -2778,7 +2951,7 @@ define("com.muxistudio.lib.search.result", function(e) {
             return n && e(t.prototype, n), r && e(t, r), t;
           };
         })(),
-        l = n(4),
+        l = n(5),
         a = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(l),
@@ -2863,9 +3036,9 @@ define("com.muxistudio.lib.search.result", function(e) {
             return n && e(t.prototype, n), r && e(t, r), t;
           };
         })(),
-        a = n(48),
+        a = n(51),
         s = r(a),
-        c = n(50),
+        c = n(53),
         f = r(c),
         d = n(0),
         p = r(d),
@@ -2875,7 +3048,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         m = r(v),
         b = n(10),
         _ = r(b),
-        g = n(47),
+        g = n(50),
         w = r(g),
         x = (function() {
           function e(t) {
@@ -3466,7 +3639,7 @@ define("com.muxistudio.lib.search.result", function(e) {
             return n && e(t.prototype, n), r && e(t, r), t;
           };
         })(),
-        l = n(4),
+        l = n(5),
         a = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(l),
@@ -3745,170 +3918,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         (e.exports = t.default);
     },
     function(t, n) {
-      t.exports = e("@weex-module/test");
-    },
-    function(e, t, n) {
-      "use strict";
-      function r(e) {
-        var t = { method: e.method, url: e.url };
-        return (
-          "POST" === e.method &&
-            ((t.headers = { "Content-Type": "application/json" }),
-            (t.body = e.body)),
-          e.headers && (t.headers = e.headers),
-          new Promise(function(e, n) {
-            o.fetch(t, function(t) {
-              t.ok ? e(JSON.parse(t.data)) : n(t);
-            });
-          })
-        );
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 });
-      var o = n(69);
-      (t.default = r), (e.exports = t.default);
-    },
-    function(e, t, n) {
-      "use strict";
-      function r(e, t) {
-        if (!(e instanceof t))
-          throw new TypeError("Cannot call a class as a function");
-      }
-      function o(e, t) {
-        if (!e)
-          throw new ReferenceError(
-            "this hasn't been initialised - super() hasn't been called"
-          );
-        return !t || ("object" != typeof t && "function" != typeof t) ? e : t;
-      }
-      function i(e, t) {
-        if ("function" != typeof t && null !== t)
-          throw new TypeError(
-            "Super expression must either be null or a function, not " +
-              typeof t
-          );
-        (e.prototype = Object.create(t && t.prototype, {
-          constructor: {
-            value: e,
-            enumerable: !1,
-            writable: !0,
-            configurable: !0
-          }
-        })),
-          t &&
-            (Object.setPrototypeOf
-              ? Object.setPrototypeOf(e, t)
-              : (e.__proto__ = t));
-      }
-      Object.defineProperty(t, "__esModule", { value: !0 });
-      var u =
-          Object.assign ||
-          function(e) {
-            for (var t = 1; t < arguments.length; t++) {
-              var n = arguments[t];
-              for (var r in n)
-                Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
-            }
-            return e;
-          },
-        l = (function() {
-          function e(e, t) {
-            for (var n = 0; n < t.length; n++) {
-              var r = t[n];
-              (r.enumerable = r.enumerable || !1),
-                (r.configurable = !0),
-                "value" in r && (r.writable = !0),
-                Object.defineProperty(e, r.key, r);
-            }
-          }
-          return function(t, n, r) {
-            return n && e(t.prototype, n), r && e(t, r), t;
-          };
-        })(),
-        a = n(1),
-        s = n(2),
-        c = n(5),
-        f = (function(e) {
-          return e && e.__esModule ? e : { default: e };
-        })(c),
-        d = (function(e) {
-          function t() {
-            return (
-              r(this, t),
-              o(
-                this,
-                (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments)
-              )
-            );
-          }
-          return (
-            i(t, e),
-            l(t, [
-              {
-                key: "render",
-                value: function() {
-                  var e = u({}, this.props),
-                    t = e.source;
-                  if (t && t.uri) {
-                    var n = e.style,
-                      r = t.width,
-                      o = t.height,
-                      i = t.uri;
-                    null == r &&
-                      null == o &&
-                      null == n.height &&
-                      null == n.width &&
-                      ((r = 0), (o = 0)),
-                      (e.style = u(
-                        u(
-                          {},
-                          !this.context.isInAParentText && { display: "flex" },
-                          { width: r, height: o }
-                        ),
-                        n
-                      )),
-                      (e.src = i),
-                      delete e.source;
-                    var l = void 0;
-                    l = s.isWeex ? "image" : "img";
-                    var c = e.resizeMode || e.style.resizeMode;
-                    return (
-                      c &&
-                        (s.isWeex
-                          ? ((e.resize = c), (e.style.resizeMode = c))
-                          : (e.style.objectFit = c)),
-                      this.props.children
-                        ? ((e.children = null),
-                          (0, a.createElement)(
-                            f.default,
-                            { style: e.style },
-                            (0, a.createElement)(l, e),
-                            (0, a.createElement)(
-                              f.default,
-                              { style: p.absoluteImage },
-                              this.props.children
-                            )
-                          ))
-                        : (0, a.createElement)(l, e)
-                    );
-                  }
-                  return null;
-                }
-              }
-            ]),
-            t
-          );
-        })(a.Component);
-      (d.propTypes = {}),
-        (d.resizeMode = {
-          contain: "contain",
-          cover: "cover",
-          stretch: "stretch",
-          center: "center",
-          repeat: "repeat"
-        }),
-        (d.contextTypes = { isInAParentText: a.PropTypes.bool });
-      var p = { absoluteImage: { left: 0, top: 0, position: "absolute" } };
-      (t.default = d), (e.exports = t.default);
+      t.exports = e("@weex-module/stream");
     },
     ,
     function(e, t, n) {
@@ -4006,7 +4016,7 @@ define("com.muxistudio.lib.search.result", function(e) {
     function(e, t, n) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var r = n(53),
+      var r = n(21),
         o = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(r),
@@ -4033,6 +4043,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         };
       (t.default = i), (e.exports = t.default);
     },
+    ,
     ,
     ,
     ,
@@ -4081,7 +4092,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         })(),
         u = o(["&"], ["&"]),
         l = o(["="], ["="]),
-        a = n(53);
+        a = n(21);
       Object.defineProperty(t, "request", {
         enumerable: !0,
         get: function() {
@@ -4185,11 +4196,11 @@ define("com.muxistudio.lib.search.result", function(e) {
         })(),
         c = n(1),
         f = n(2),
-        d = n(5),
+        d = n(4),
         p = r(d),
-        h = n(56),
+        h = n(57),
         y = r(h),
-        v = n(65),
+        v = n(67),
         m = r(v),
         b = 750,
         _ = (function(e) {
@@ -4575,14 +4586,12 @@ define("com.muxistudio.lib.search.result", function(e) {
     ,
     ,
     ,
-    function(t, n) {
-      t.exports = e("@weex-module/stream");
-    },
+    ,
     ,
     function(e, t, n) {
       "use strict";
       var r = n(1),
-        o = n(74),
+        o = n(76),
         i = (function(e) {
           return e && e.__esModule ? e : { default: e };
         })(o);
@@ -4641,22 +4650,22 @@ define("com.muxistudio.lib.search.result", function(e) {
           };
         })(),
         a = n(1),
-        s = n(5),
+        s = n(4),
         c = r(s),
-        f = n(12),
+        f = n(11),
         d = r(f),
-        p = n(76),
+        p = n(78),
         h = r(p),
-        y = n(54),
+        y = n(36),
         v = r(y),
-        m = n(57),
+        m = n(58),
         b = r(m),
-        _ = n(75),
+        _ = n(77),
         g = r(_),
-        w = n(61),
-        x = n(33),
+        w = n(63),
+        x = n(22),
         C = r(x),
-        O = n(52),
+        O = n(23),
         A = (function(e) {
           function t(e) {
             o(this, t);
@@ -4786,11 +4795,18 @@ define("com.muxistudio.lib.search.result", function(e) {
                     (n.keywords = e || this.state.keywords),
                     b.default.getBook(n).then(
                       function(e) {
+                        O.reportInsightApiEvent("searchLib", "success", "null");
                         var n = e.result;
                         t.setState({ data: n }), O.changeLoadingStatus(!0);
                       },
                       function(e) {
-                        throw e;
+                        O.reportInsightApiEvent(
+                          "searchLib",
+                          "error",
+                          JSON.stringify(e)
+                        ),
+                          alert("服务端错误"),
+                          O.back();
                       }
                     );
                 }
@@ -4955,8 +4971,8 @@ define("com.muxistudio.lib.search.result", function(e) {
           };
         })(),
         s = n(1),
-        c = (n(2), n(5)),
-        f = (r(c), n(77)),
+        c = (n(2), n(4)),
+        f = (r(c), n(79)),
         d = r(f),
         p = "scrollview",
         h = (function(e) {
@@ -5085,11 +5101,11 @@ define("com.muxistudio.lib.search.result", function(e) {
         })(),
         s = n(1),
         c = n(2),
-        f = n(5),
+        f = n(4),
         d = r(f),
-        p = n(64),
+        p = n(66),
         h = r(p),
-        y = n(56),
+        y = n(57),
         v = r(y),
         m = (function(e) {
           function t() {
@@ -5255,7 +5271,7 @@ define("com.muxistudio.lib.search.result", function(e) {
         (e.exports = t.default);
     },
     function(e, t, n) {
-      e.exports = n(71);
+      e.exports = n(73);
     }
   ]);
 }),
