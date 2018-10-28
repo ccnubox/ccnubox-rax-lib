@@ -63,7 +63,7 @@ class ListViewDemo extends Component {
           "error",
           JSON.stringify(err)
         );
-        alert("请求图书详情失败！");
+        alert(`请求图书详情失败：${JSON.stringify(err)}`);
       }
     );
   }

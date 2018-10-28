@@ -57,7 +57,7 @@ class ListViewDemo extends Component {
       },
       err => {
         native.reportInsightApiEvent("searchLib", "error", JSON.stringify(err));
-        alert("服务端错误");
+        alert(`服务端错误：${JSON.stringify(err)}`);
         native.back();
       }
     );

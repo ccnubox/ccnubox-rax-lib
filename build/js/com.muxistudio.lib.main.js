@@ -1,5 +1,5 @@
 // {"framework" : "Rax"}
-/*! com.muxistudio.lib, version 2.0.0-rc1, built time: Sat Oct 06 2018 11:17:44 GMT+0800 (China Standard Time) */
+/*! com.muxistudio.lib, version 2.0.0-rc2, built time: Sat Oct 20 2018 13:11:42 GMT+0800 (China Standard Time) */
 define("com.muxistudio.lib.main", function(e) {
   !(function(e) {
     function t(r) {
@@ -4010,9 +4010,10 @@ define("com.muxistudio.lib.main", function(e) {
               (n.nav = function() {
                 "" === n.state.text
                   ? alert("请输入关键词！")
-                  : x.push(
+                  : (x.push(
                       "ccnubox://lib.search.result?keyword=" + n.state.text
-                    );
+                    ),
+                    n.setState({ text: "" }));
               }),
               (n.state = { text: "", page: 1 }),
               n
@@ -4038,6 +4039,7 @@ define("com.muxistudio.lib.main", function(e) {
                       resizeMode: "contain"
                     }),
                     (0, l.createElement)(b.default, {
+                      value: this.state.text,
                       style: O.searchInput,
                       onChange: function(t) {
                         return e.updateText(t.nativeEvent.text);

@@ -1,5 +1,5 @@
 // {"framework" : "Rax"}
-/*! com.muxistudio.lib, version 2.0.0-rc1, built time: Sat Oct 06 2018 11:17:44 GMT+0800 (China Standard Time) */
+/*! com.muxistudio.lib, version 2.0.0-rc2, built time: Sat Oct 20 2018 13:11:42 GMT+0800 (China Standard Time) */
 define("com.muxistudio.lib.search.detail", function(e) {
   !(function(e) {
     function t(r) {
@@ -36,7 +36,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         return Object.prototype.hasOwnProperty.call(e, t);
       }),
       (t.p = "/"),
-      t((t.s = 81));
+      t((t.s = 82));
   })([
     function(e, t, n) {
       "use strict";
@@ -79,9 +79,9 @@ define("com.muxistudio.lib.search.detail", function(e) {
         b = n(9),
         g = r(b),
         x = n(41),
-        w = r(x),
-        C = n(45),
-        O = r(C),
+        C = r(x),
+        w = n(45),
+        O = r(w),
         E = n(54),
         P = r(E),
         j = n(37),
@@ -100,7 +100,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         (t.createPortal = v.default),
         (t.findDOMNode = _.default),
         (t.unmountComponentAtNode = g.default),
-        (t.findComponentInstance = w.default),
+        (t.findComponentInstance = C.default),
         (t.setNativeProps = O.default),
         (t.version = P.default),
         (t.Children = S.default),
@@ -2718,7 +2718,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
           (l.default.TextComponent = p.default),
           (l.default.FragmentComponent = m.default),
           (l.default.CompositeComponent = y.default),
-          (l.default.hook = n || C.default),
+          (l.default.hook = n || w.default),
           (l.default.measurer = r),
           !l.default.driver)
         ) {
@@ -2758,8 +2758,8 @@ define("com.muxistudio.lib.search.detail", function(e) {
         b = r(_),
         g = n(25),
         x = r(g),
-        w = n(13),
-        C = r(w);
+        C = n(13),
+        w = r(C);
       e.exports = t.default;
     },
     function(e, t, n) {
@@ -2908,7 +2908,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         b = r(_),
         g = n(50),
         x = r(g),
-        w = (function() {
+        C = (function() {
           function e(t) {
             o(this, e), (this._currentElement = t);
           }
@@ -3211,7 +3211,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
             e
           );
         })();
-      (t.default = w), (e.exports = t.default);
+      (t.default = C), (e.exports = t.default);
     },
     function(e, t, n) {
       "use strict";
@@ -4216,14 +4216,14 @@ define("com.muxistudio.lib.search.detail", function(e) {
                     x = this.props.horizontal
                       ? g.baseHorizontal
                       : g.baseVertical,
-                    w = a({}, x, this.props.style),
-                    C = this.props.horizontal ? r : o;
+                    C = a({}, x, this.props.style),
+                    w = this.props.horizontal ? r : o;
                   if (c.isWeex)
                     return (0, f.createElement)(
                       "scroller",
                       a({}, this.props, {
-                        style: w,
-                        showScrollbar: C,
+                        style: C,
+                        showScrollbar: w,
                         onLoadmore: i,
                         onScroll: s ? this.handleScroll : null,
                         loadmoreoffset: u,
@@ -4238,7 +4238,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                   var O = this.handleScroll;
                   if (
                     (n && (O = l(O, n)),
-                    !C &&
+                    !w &&
                       "undefined" != typeof document &&
                       !document.getElementById("rax-scrollview-style"))
                   ) {
@@ -4250,11 +4250,11 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         this.props.className +
                         "::-webkit-scrollbar{display: none;}");
                   }
-                  (w.webkitOverflowScrolling = "touch"),
-                    (w.overflow = "scroll");
+                  (C.webkitOverflowScrolling = "touch"),
+                    (C.overflow = "scroll");
                   var P = a({}, this.props, {
                     ref: "scroller",
-                    style: w,
+                    style: C,
                     onScroll: O
                   });
                   return (
@@ -4520,7 +4520,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
         b = n(63),
         g = n(23),
         x = { bid: "", book: "", author: "", intro: "", books: [] },
-        w = (function(e) {
+        C = (function(e) {
           function t(e) {
             o(this, t);
             var n = i(
@@ -4538,7 +4538,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                       null,
                       (0, a.createElement)(
                         h.default,
-                        { style: C.details },
+                        { style: w.details },
                         "无"
                       )
                     )
@@ -4548,7 +4548,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         null,
                         (0, a.createElement)(
                           h.default,
-                          { style: [C.details, C.intro_text] },
+                          { style: [w.details, w.intro_text] },
                           n.state.displayFullIntro
                             ? n.state.info.intro
                             : n.state.info.intro.slice(0, 100)
@@ -4558,7 +4558,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                           { onPress: n.toggleIntro },
                           (0, a.createElement)(
                             h.default,
-                            { style: C.more },
+                            { style: w.more },
                             n.state.displayFullIntro ? "收起" : "更多"
                           )
                         )
@@ -4568,7 +4568,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         null,
                         (0, a.createElement)(
                           h.default,
-                          { style: C.details },
+                          { style: w.details },
                           n.state.info.intro
                         )
                       );
@@ -4604,11 +4604,22 @@ define("com.muxistudio.lib.search.detail", function(e) {
                   (n.id = e || this.state.id),
                     _.default.getSingeBookInfo(n).then(
                       function(e) {
+                        g.reportInsightApiEvent(
+                          "getBookInfo",
+                          "success",
+                          "null"
+                        );
                         var n = e;
                         t.setState({ info: n }), g.changeLoadingStatus(!0);
                       },
                       function(e) {
-                        throw e;
+                        g.changeLoadingStatus(!0),
+                          g.reportInsightApiEvent(
+                            "getBookInfo",
+                            "error",
+                            JSON.stringify(e)
+                          ),
+                          alert("请求图书详情失败！");
                       }
                     );
                 }
@@ -4622,39 +4633,39 @@ define("com.muxistudio.lib.search.detail", function(e) {
                     (e = t.length
                       ? (0, a.createElement)(
                           f.default,
-                          { style: C.statusTab },
+                          { style: w.statusTab },
                           (0, a.createElement)(
                             f.default,
-                            { style: C.tr },
+                            { style: w.tr },
                             (0, a.createElement)(
                               h.default,
-                              { style: [C.th, C.tr_id] },
+                              { style: [w.th, w.tr_id] },
                               "索书号"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: [C.th, C.tr_address] },
+                              { style: [w.th, w.tr_address] },
                               "馆藏地址"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: [C.th, C.tr_status] },
+                              { style: [w.th, w.tr_status] },
                               "书刊状态"
                             )
                           ),
                           t.map(function(e) {
                             return (0,
-                            a.createElement)(f.default, { style: C.tr }, (0, a.createElement)(f.default, { style: C.td }, (0, a.createElement)(h.default, { style: C.td_text }, e.tid)), (0, a.createElement)(f.default, { style: C.td }, (0, a.createElement)(h.default, { style: C.td_text }, e.room)), (0, a.createElement)(f.default, { style: C.td }, (0, a.createElement)(h.default, { style: [C.td_text, "可借" === e.status ? C.td_text_highlight : {}] }, e.status + ("借出" === e.status ? "-应还日期" + (0, a.createElement)("br", null) + e.date : ""))));
+                            a.createElement)(f.default, { style: w.tr }, (0, a.createElement)(f.default, { style: w.td }, (0, a.createElement)(h.default, { style: w.td_text }, e.tid)), (0, a.createElement)(f.default, { style: w.td }, (0, a.createElement)(h.default, { style: w.td_text }, e.room)), (0, a.createElement)(f.default, { style: w.td }, (0, a.createElement)(h.default, { style: [w.td_text, "可借" === e.status ? w.td_text_highlight : {}] }, e.status + ("借出" === e.status ? "-应还日期" + (0, a.createElement)("br", null) + e.date : ""))));
                           })
                         )
                       : (0, a.createElement)(
                           h.default,
-                          { style: C.emptyTip },
+                          { style: w.emptyTip },
                           this.state.info.bid
                         )),
                     (0, a.createElement)(
                       f.default,
-                      { style: C.App },
+                      { style: w.App },
                       (0, a.createElement)(
                         d.default,
                         {
@@ -4668,19 +4679,19 @@ define("com.muxistudio.lib.search.detail", function(e) {
                         },
                         (0, a.createElement)(
                           f.default,
-                          { style: C.detail_containner },
+                          { style: w.detail_containner },
                           (0, a.createElement)(
                             f.default,
-                            { style: C.title },
+                            { style: w.title },
                             (0, a.createElement)(
                               h.default,
-                              { style: C.static_title },
+                              { style: w.static_title },
                               " ",
                               "题名/责任人"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: C.details },
+                              { style: w.details },
                               this.state.info.book,
                               " ",
                               this.state.info.author
@@ -4688,27 +4699,27 @@ define("com.muxistudio.lib.search.detail", function(e) {
                           ),
                           (0, a.createElement)(
                             f.default,
-                            { style: C.publisher },
+                            { style: w.publisher },
                             (0, a.createElement)(
                               h.default,
-                              { style: C.static_title },
+                              { style: w.static_title },
                               "出版发行项"
                             ),
                             (0, a.createElement)(
                               h.default,
-                              { style: C.details },
+                              { style: w.details },
                               this.state.publisher || "无"
                             )
                           ),
-                          (0, a.createElement)(f.default, { style: C.content }),
+                          (0, a.createElement)(f.default, { style: w.content }),
                           (0, a.createElement)(
                             h.default,
-                            { style: C.static_title },
+                            { style: w.static_title },
                             "内容简介"
                           ),
                           (0, a.createElement)(
                             f.default,
-                            { style: C.details },
+                            { style: w.details },
                             this.renderIntro()
                           )
                         ),
@@ -4722,7 +4733,7 @@ define("com.muxistudio.lib.search.detail", function(e) {
             t
           );
         })(a.Component),
-        C = {
+        w = {
           App: {
             backgroundColor: "rgb(239,239,244)",
             flex: 1,
@@ -4788,8 +4799,9 @@ define("com.muxistudio.lib.search.detail", function(e) {
           td_text: { color: "#434343", textAlign: "left", fontSize: 20 },
           td_text_highlight: { color: "#feb75a" }
         };
-      (t.default = w), (e.exports = t.default);
+      (t.default = C), (e.exports = t.default);
     },
+    ,
     ,
     ,
     ,

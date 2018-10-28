@@ -7,7 +7,7 @@ const BookService = {
       method: "GET",
       url:
         "https://ccnubox.muxixyz.com/api/lib/search/?keyword=" +
-        option.keywords +
+        encodeURIComponent(option.keywords) +
         "&page=" +
         option.page
     });
